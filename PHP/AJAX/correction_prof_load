@@ -1,0 +1,120 @@
+"use strict";
+
+var contacts = [];
+
+var titleForm;
+var firstNameForm;
+var lastNameForm;
+var phoneForm;
+var contactForm;
+
+var addressBook;
+
+//----------------------------------------
+// FUNCTION DU LOCALSTORAGE
+
+function SaveToLocalStorage(contact)
+{
+	contacts.push(contact);
+
+	var jsonOfContacts = JSON.stringify(contacts);
+
+	window.localStorage.setItem("address-book", jsonOfContacts);
+}
+
+function LoadFromLocalStorage()
+{
+	contacts = JSON.parse(window.localStorage.getItem("address-book"));
+}
+
+//----------------------------------------
+// CALLBACK D'EVENTS
+
+function OnClickAddContact()
+{
+	//console.log("Add Contact");
+	contactForm.classList.toggle("hide");
+}
+
+function OnClickClearAdressBook()
+{
+	console.log("Clear Adress Book");
+
+	localStorage.clear();
+	contacts = [];
+}
+
+function OnClickSaveContact()
+{
+	var contact = ConvertFormToObject();
+	SaveToLocalStorage(contact);
+
+	RefreshAdressBook();
+}
+
+function ShowAdressBook()
+{
+	var content = "<ul>";
+
+	for(var i = 0; i < contacts.length; i++)
+	{
+		content += "<li>";
+
+		content += contacts[i].title +  ' ' + contacts[i].firstName + ' ' + contacts[i].lastName;
+		content += ' ' + contacts[i].number;
+ 
+		content += "</li>";
+	}
+
+	content += "</ul>";
+	addressBook.innerHTML = content;
+}
+
+//----------------------------------------
+// WRAPPER
+
+function ConvertFormToObject()
+{
+	/*
+	var contact = new Object();
+
+	contact.title = titleForm.value;
+	contact.firstName = firstNameForm.value;
+	contact.lastName = lastNameForm.value;
+	contact.number = phoneForm.value;
+	*/
+
+	var contact = 
+	{
+		title: titleForm.value,
+		firstName: firstNameForm.value,
+		lastName: lastNameForm.value,
+		number: phoneForm.value
+	};
+
+	return contact;
+}
+
+function RefreshAdressBook()
+{
+	LoadFromLocalStorage();
+	ShowAdressBook();
+}
+
+window.addEventListener("DOMContentLoaded", function()
+{
+	//console.log("DOM Loaded");
+	document.getElementById("add-contact").addEventListener("click", OnClickAddContact); // toggle
+	document.querySelector("#clear-address-book").addEventListener("click", OnClickClearAdressBook); // clear
+	document.getElementById("save-contact").addEventListener("click", OnClickSaveContact); // save 
+
+
+	titleForm = document.getElementById("title");
+	firstNameForm = document.getElementById("firstName");
+	lastNameForm = document.getElementById("lastName");
+	phoneForm = document.getElementById("phone");
+	contactForm = document.getElementById("contact-form");
+	addressBook = document.getElementById("address-book");
+
+	RefreshAdressBook();
+});

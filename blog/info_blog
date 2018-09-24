@@ -1,0 +1,48 @@
+localhost/blog/src
+index.html // structure
+index.css  // deco
+index.php // afficheur 
+index.phtml //afficheur
+index.js //dynamise
+
+localhost/blog/src/admin.php  
+admin.html 
+admin.css
+admin.phtml
+admin.js
+
+localhost/blog/src/add_post.php lien rediger un nouvel article 
+add_post.html // structure 
+add_post.css
+add_post.php //  traite stock formulaire
+add_post.js //formulaire 
+
+ce q'on a écrit dans le formulaire va etre envoyer dans la page d'acceuil.
+si on clik sur l'article on tombe sur la page article avec en dessous une sectio "Nouveau commentaire".
+
+src/show_post.php
+
+src/edit_post.php page pour modifier l'article
+
+
+
+
+
+
+controleur
+addcomment.php ds show_post.php
+delete_post.php correspond s la croix ds admin.php
+add_post.php pour la page add_post.php ajout 
+edit_post.php mettre à jour
+
+
+MySQL
+titre 
+article 
+auteur 
+Catégorie
+pseudo
+commentaire 
+date 
+nombre d'article
+nombre de commentaire  

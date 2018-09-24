@@ -1,0 +1,96 @@
+<!DOCTYPE html lang="fr">
+<html>
+<head>
+	<title>Gestionnaire</title>
+	<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Amaranth|Open+Sans" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+</head>
+
+<body>
+	<div>
+		<header>
+			<h1>Gestionnaire de tâches</h1>
+		</header>
+
+		<main>
+			<section>
+				<form  action="delete.php" method="post">
+				
+					<section>
+						<input type="checkbox" name="choix"  /><label id="choix" for="EDF">Payer EDF - <span> En retard </span><p class="cacher">La douloureuse !!</p></label>
+					</section>
+
+					<input type="submit" name="supprimer" value="Supprimer" class="bouton">
+				
+				</form>
+
+			<form action="add.php" method="post">
+					<fieldset>
+						<legend>Information sur le tâches</legend>
+
+						<section>
+							<label for="titre">Titre:</label>
+							<input type="text" name="titre" id="titre">
+						</section>
+
+						<section>
+							<label for="tache">Tâche:</label>
+							<textarea name="textarea" rows="10" cols="50"></textarea>
+						</section>
+
+
+						<section>
+							<label>Fin de date:</label>
+							<select name="jour" id="jours">
+
+								<?php for ($i=1; $i<32; $i++): ?>
+									<option value="<?= $i ?>"> <?=$i ?> </option>
+								<?php endfor; ?>
+
+							</select>
+
+							<select name="mois">
+								<option>January</option>      
+							    <option>February</option>      
+							    <option>March</option>      
+							    <option>April</option>      
+							    <option>May</option>      
+							    <option>June</option>      
+							    <option>July</option>      
+							    <option>August</option>      
+							    <option>September</option>      
+							    <option>October</option>      
+							    <option>November</option>      
+							    <option>December</option>       
+							</select>
+						
+
+							<select name="annee">
+								<?php for ($i=2018; $i<2026; $i++): ?>
+									<option value="<?= $i ?>"> <?=$i ?> </option>
+								<?php endfor; ?>
+							</select>
+						</section>
+
+						<section>
+							<p>Priorité:
+
+							<input type="radio" name="seul" value="basse" id="basse"/><label for="basse">basse</label>
+
+							<input type="radio" name="seul" value="normale" id="normale"><label for="normale">normale</label>
+
+							<input type="radio" name="seul" value="haute" id="haute"><label for="haute">haute</label>
+
+							</p>
+						</section>
+
+						<input type="submit" value="Ajouter" name="Ajouter" class="bouton">
+					</fieldset>
+				</form>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

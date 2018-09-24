@@ -1,0 +1,60 @@
+<main>
+        <!-- Affichage du template lié à la vue -->
+        <h2><i class="fa fa-check"></i> Payer la commande</h2>
+
+<section class="invoice">
+    <p><strong> <?= $_SESSION['prenom'] ?><?= $_SESSION['nom'] ?></strong></p>
+    <p><?= $_SESSION['adress'] ?></p>
+    <p><?= $_SESSION['code'] ?> <span class="city"><?= $_SESSION['ville'] ?></span></p>
+</section>
+
+<table class="generic-table meal-list">
+    <caption>Récapitulatif de la commande</caption>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th class="number">Quantité</th>
+            <th class="number">Prix Unitaire</th>
+            <th class="number">Prix Total</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total HT</td>
+            <td>30.00 €</td>
+        </tr>
+        <tr>
+            <td colspan="3">TVA (20 %)</td>
+            <td>6.00 €</td>
+        </tr>
+        <tr>
+            <td class="colorful" colspan="3">Total TTC</td>
+            <td class="colorful">36.00 €</td>
+        </tr>
+        <tr class="small-notice">
+            <td colspan="4">Commandé le 2018-09-24 10:33:11</td>
+        </tr>
+    </tfoot>
+    <tbody>
+                    <tr>
+                <td>
+                    <img src="/Restaurant (corrigé)/application/www/images/meals/coca.jpg" width="25%">
+                    <em>Coca-Cola</em>
+                </td>
+                <td class="number">10</td>
+                <td class="number">3.00 €</td>
+                <td class="number">30.00 €</td>
+            </tr>
+            </tbody>
+</table>
+
+<hr>
+<h3>Merci de bien vouloir procéder au paiement de la commande.</h3>
+<form class="generic-form" action="/Restaurant (corrigé)/index.php/order/payment" method="POST">
+	<ul>
+		<li>
+			<input class="button button-primary" value="Payer" type="submit">
+			<a class="button button-cancel small" href="/Restaurant (corrigé)/index.php">Annuler</a>
+		</li>
+	</ul>
+</form>    </main>

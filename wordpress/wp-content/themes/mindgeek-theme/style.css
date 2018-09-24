@@ -1,0 +1,380 @@
+/******************************************************
+CSS COMMUN
+******************************************************/
+*{
+	box-sizing: border-box;
+}
+
+.container{
+	margin:0 auto;
+	max-width:80%;
+}
+
+body{
+	color: #666;
+	font-family: 'Open Sans', sans-serif;
+	font-size:100%;
+	line-height:1.8;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Candal', sans-serif;
+	font-weight: normal;
+}
+
+.blog-flex{
+	display:flex;
+	flex-direction: column;
+}
+/******************************************************
+FIN CSS COMMUN
+******************************************************/
+
+
+/******************************************************
+CSS HEADER
+******************************************************/
+header nav{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	text-align:center;
+}
+
+header nav a{
+	color: #1e3e4b;
+	font-family: "Candal";
+	font-size: 1.4em;
+	padding: 25px;
+	text-decoration:none;
+}
+
+header nav a:hover {
+	color: #fb8a9b;
+}
+
+header nav a .fa {
+	color: #fb8a9b;
+	display: block;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+header nav a:hover .fa {
+	color: #203e4d;
+}
+/******************************************************
+FIN CSS HEADER
+******************************************************/
+
+
+/******************************************************
+CSS GLOBAL SEARCH FORM
+******************************************************/
+.global-search{
+	background-color: #fb8a9b;
+	font-size: 1.5em;
+	letter-spacing: 2px;
+    padding: 25px 0;
+    text-transform: uppercase;
+}
+
+.global-search input {
+	background-color:transparent;
+	border: 0;
+	color: white;
+    width: 100%;
+}
+
+.global-search .search-submit{ /*bouton par défaut*/
+	display:none;
+}
+/******************************************************
+FIN CSS GLOBAL SEARCH FORM
+******************************************************/
+
+
+/******************************************************
+CSS ACCUEIL
+******************************************************/
+.intro{
+	background:url(img/background.jpg);
+	color:white;
+	padding: 90px 50px;
+	text-align: center;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.intro h1{
+	font-size: 1.5em;
+}
+
+.intro p{
+	font-family: 'Candal', sans-serif;
+	font-size: 1em;
+}
+
+.solution h2 {
+	color: #203e4d;
+	font-size: 1.8em;
+	font-family: "Candal";
+	text-align: center;
+	margin-top: 50px;
+	padding: 25px 0;
+	border-top: 1px dashed #46636e;
+	border-left: 1px dashed #46636e;
+	border-right: 1px dashed #46636e;
+}
+
+.solution h3{
+	color:#fb8a9b;
+	font-size:1.2em;
+}
+
+.solution h3 .fa{
+	display:block;
+	color: #fb8a9b;
+	font-size: 2.5em;
+	margin: 25px auto ;
+}
+
+.solution .prix{
+	color: #fb8a9b;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+/******************************************************
+FIN CSS ACCUEIL
+******************************************************/
+
+/******************************************************
+CSS PARTIE BLOG
+******************************************************/
+/*Accueil*/
+.articles-blog{
+	padding-right: 0;
+}
+
+.articles-blog a{
+	color: #1e3e4b;
+}
+
+.articles-blog article{
+	border-bottom: 2px dashed #ccc;
+}
+
+.articles-blog article:last-of-type{
+	border-bottom: 0;
+}
+
+/*sidebar 1*/
+.aside-right{
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 0 20px
+}
+
+.aside-right [class^="widget"]{
+	border-bottom: 2px solid #ccc;
+}
+
+.aside-right [class^="widget"]:last-child{
+	border-bottom: 0;
+}
+
+.aside-right form{
+	margin-bottom:20px;
+}
+
+/*formulaire de recherche dans la sidebar*/
+.aside-right form input{
+	border:1px solid #999;
+	border-radius:5px;
+	margin-bottom: 10px;
+	padding:10px;
+	width: 100%;
+}
+
+.aside-right form button{
+	background: #fedea0;
+	border:none;
+	border-radius:5px;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+	padding:10px;
+	width: 115px;
+}
+
+/*calendrier dans la side bar*/
+.aside-right #calendar_wrap table{
+	width:100%
+}
+
+.aside-right #calendar_wrap td{
+	text-align: center;
+}
+/******************************************************
+FIN CSS PARTIE BLOG
+******************************************************/
+
+/******************************************************
+CSS PAGE 404
+******************************************************/
+#page-404{
+	background: #d8765d;
+	margin-bottom: -25px;
+}
+
+#post-404{
+	color:white;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+#post-404 h1{
+	font-size:40px;
+	margin:0;
+	padding-top:35px;
+	text-transform: uppercase;
+}
+
+#post-404 a.return-hompage{
+	color:white;
+	font-size: 30px;
+	text-decoration: none;#fedea0
+}
+
+#post-404 a.return-hompage:hover{
+	color:#fedea0;
+}
+
+#post-404 form{
+	margin-bottom:60px;
+}
+
+#post-404 form input{
+	border:1px solid #999;
+	border-radius:5px;
+	padding:10px;
+}
+
+#post-404 form button{
+	background: #fedea0;
+	border:none;
+	border-radius:5px;
+	cursor: pointer;
+	padding:10px;
+}
+/******************************************************
+FIN CSS PAGE 404
+******************************************************/
+
+/******************************************************
+CSS FOOTER
+******************************************************/
+footer {
+	background-color: #203e4d;
+	color: #ccc;
+	margin-top:25px;
+	padding:25px 0;
+	text-align: center;
+}
+
+footer a {
+	color: white;
+	padding: 15px 0;
+	text-decoration:none;
+	
+	flex: 1;
+}
+
+footer nav a:hover {
+	color: #fb8a9b;
+}
+
+footer nav {
+	font-family: "Candal", sans-serif;
+	
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+
+footer img {
+    width: 50px;
+}
+/******************************************************
+FIN CSS FOOTER
+******************************************************/
+
+
+/*------------------------------------*\
+    RESPONSIVE
+\*------------------------------------*/
+
+@media only screen and (min-width:320px) {
+
+}
+@media only screen and (min-width:480px) {
+
+}
+@media only screen and (min-width:500px){
+	.intro{
+		padding: 200px 50px;
+	}
+	.intro h1{
+		font-size: 3em;
+	}
+
+	.intro p{
+		font-size: 2em;
+	}
+}
+@media only screen and (min-width:768px) {
+
+}
+@media only screen and (min-width:1024px) {
+	header nav{
+		flex-direction:row;
+		justify-content:space-between;
+	}
+
+	header nav a:first-of-type{
+		padding-left: 0;
+	}
+
+	header nav a:last-of-type{
+		padding-right: 0;
+	}
+
+	.blog-flex{
+		flex-direction: row;
+		justify-content:space-between;
+	}
+	
+	.articles-blog, .single-article{
+		padding-right: 25px;
+		width:80%;
+	}
+
+	.aside-right{
+		width:20%;
+	}
+
+	footer nav {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+@media only screen and (min-width:1140px) {
+
+}
+@media only screen and (min-width:1280px) {
+
+}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),
+	   only screen and (min-resolution:144dpi) {
+
+}
+

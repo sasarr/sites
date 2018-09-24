@@ -1,0 +1,397 @@
+*{box-sizing: border-box;}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-image: url(../img/fond.png);
+	font-family: 'Bree Serif', serif;
+	width: 100%;
+	font-size: 1.8rem;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	transition: all 0.5s ease 5s;
+
+}
+
+body section:not(.bonjour){
+	padding-left: 25px;
+	padding-right:25px;
+}
+
+p{
+	color:rgb(160,160,160);
+
+}
+/***************HEADER***********************/
+
+header div{
+	text-align: center;	
+}
+
+header div  p img{
+	width: 47px;
+}
+#logo:hover p{
+	color:  rgb(218, 33, 80);
+}
+
+#logo:hover p img{
+	transform:  scale(1.5,1.5);
+}
+header div p:hover{
+	color:  rgb(218, 33, 80);
+}
+
+.title{
+	font-size: 3rem;
+	color: #939594;
+	font-weight: bolder;
+	margin-top: 24px;
+}
+
+header nav a{
+	color:#939594;
+	text-decoration: none;
+	font-size: 2rem;
+	transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+}
+
+header nav a:hover{
+	color:  rgb(218, 33, 80);
+	transform: translateY(20px);
+	
+}
+header div a,header div p{
+	display: block;
+}
+
+.fa, .fab, .fal, .far, .fas{
+	display: block;
+	margin-bottom: 22px;
+	margin-top: 22px;
+}
+ /*****************MAIN***************************/
+
+/*****************SECTION-1**********************/
+section:first-child{
+	background-image: url(../img/bg_header.png);
+	color: white;
+	text-align: center;
+	padding-top: 192px;
+	margin-top: 55px;
+	padding-bottom: 164px;
+	padding-right: 25px;
+	padding-left: 25px;
+	line-height: 1.5;
+	
+
+}
+
+h1{
+	margin-top: 60px;
+	margin-bottom: 45px;
+	color: white;
+	font-size: 4rem;
+}
+
+main>section:first-child>p{
+	margin-bottom: 64px;
+	text-align: center;
+	color: white;
+}
+main>section>a{
+	
+	text-decoration: none;
+	color: white;
+	background-color: rgb(218, 33, 80);
+	padding: 13px 40px;
+}
+main>section>a:hover{
+	background-color:  #ccc;
+}
+
+/*****************SECTION-2**********************/
+
+h2{
+	text-align: center;
+	color: rgb(222, 51, 91);
+	font-size: 3.5rem;
+	margin-top: 130px;
+	padding-bottom: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom:  1px solid #ccc;
+	line-height: 2;
+}
+section:nth-child(2) h2:first-child{
+	margin-top: 141px;
+}
+
+section div{
+	text-align: center;
+}
+
+section>div>figure{
+	margin-top:20px;
+}
+section>div>figure>img{
+	width: 160px;
+}
+
+section div figcaption, section div p{
+	color: rgb(111, 112, 114);
+	margin-top: 24px;
+}
+
+section div p{
+	font-size: 30px;
+	margin-bottom: 93px;
+
+}
+
+/*****************SECTION-3**********************/
+section:nth-child(3) article{
+	text-align: center;
+}
+
+h3{
+	color: rgb(222, 51, 91);
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+}
+section:nth-child(3) article p{
+	color: rgb(160,160,160);
+	line-height: 2;
+	margin-bottom: 86px;
+	 
+}
+
+section:nth-child(3) i.fas.fa-flask::before,section:nth-child(3) i.fas.fa-coffee::before, section:nth-child(3) i.fas.fa-code::before{
+	color: rgb(151, 151, 151);
+	background-color: rgb(240, 240, 240);
+	border-radius: 50%;
+	border: 1px solid rgb(151, 151, 151);
+	padding: 25px 25px;
+}
+
+section:nth-child(3) i{
+	margin-top: 55px;
+	margin-bottom: 55px;
+}
+
+section:nth-child(3) i.fas.fa-flask:hover, section:nth-child(3) i.fas.fa-coffee:hover, section:nth-child(3) i.fas.fa-code:hover {
+
+	animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+	from{  transform: translateY(0);}
+	to{
+  transform: translateY(-20px);}
+ }	
+
+
+/*****************SECTION-4**********************/
+section:nth-child(4) img{
+	width: 100%;
+}
+
+section:nth-child(4) p{
+	text-align: left;
+	margin-bottom: 30px;
+	line-height: 1.7;
+	margin-top: 0;
+}
+
+section:nth-child(4) a{
+	padding: 15px 23px;
+	text-decoration: none;
+	color: rgb(218, 33, 80);
+	background-color: transparent;
+}
+
+section:nth-child(4) a:hover{
+	background-color: rgb(218, 33, 80);
+	color: white;
+}
+
+section:nth-child(4) i{
+	display: inline-block;
+	margin: 0;
+}
+
+section:nth-child(4) article img+p{
+	margin-top: 35px;
+}
+/*****************SECTION-5**********************/
+section:nth-child(5)  h2{
+	margin-top: 50px;
+}
+section:nth-child(5) p{
+	text-align: left;
+	line-height: 1.5;
+	margin-bottom: 38px;
+	padding-left: 25px;
+	padding-right:25px;
+	
+}
+section:nth-child(5) form{
+	display: block;
+	text-align: center;
+}
+#centre{
+	margin-top: 32px;
+	text-align: center;
+}
+input, textarea{
+	font-family: arial;
+}
+
+form>div>input{
+	border:1px solid #ccc;
+	border-radius: 50px;
+	margin-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	width: 100%;
+	padding-left: 70px;
+}
+form>textarea{
+	border:1px solid #ccc;
+	border-radius: 50px;
+	padding-top: 20px;
+	width: 100%;
+	padding-left: 70px;
+	resize: none;
+}
+#prénom{
+	background-image: url(../img/bg_form_name.svg);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 5% 50%;
+}
+
+#email{
+	background-image: url(../img/bg_form_mail.svg);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 5% 50%
+}
+
+#message{
+	background-image: url(../img/bg_form_message.svg);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 5% 50%;
+
+}
+form>p>input{
+	border-radius: 0px;
+	color: white;
+	padding: 12px 20px;
+	border: 0;
+}
+
+#envoyer{
+	background-color: rgb(218, 33, 80);
+}
+
+#effacer{
+	background-color: #989898;
+}
+
+
+/*****************FOOTER**********************/
+
+footer{
+	margin-top: 76px;
+	text-align: center;
+	font-size: 1.35rem;
+	line-height: 1.7;
+}
+
+footer img{
+	width: 55px;
+}
+
+footer a{
+	text-decoration: none;
+	color: rgb(218, 33, 80);
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 767px){
+
+header div a{
+	display: inline-block;
+	width: 25%;
+}
+
+section:nth-child(4) img{
+	float: right;
+	width: 350px;
+	margin-left: 16px;
+	margin-bottom: 22px;
+}
+
+#prénom, #email{
+	width: 48%
+}
+#prénom{
+	margin-right: 3%;
+}
+
+div>input{
+	display: inline-block;	
+}
+#message{
+	background-position: 3% 50%;
+}
+}
+
+
+
+
+@media screen and (min-width: 1024px){
+
+body{
+	max-width: 1100px;
+	margin: auto;
+}
+
+header div#logo, header div nav{
+	display: inline-block;
+}
+header div nav{
+	float:right;
+}
+
+header div#logo{
+	float:left;
+}
+
+.clear{
+	clear: both;
+}
+#logo img, .title{
+	display: inline-block;
+}
+
+#logo img{
+	float: left;
+}
+.title {
+	float: right;
+}
+}

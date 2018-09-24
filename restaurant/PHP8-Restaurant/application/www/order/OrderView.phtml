@@ -1,0 +1,68 @@
+ <!-- Affichage du template lié à la vue -->
+        <h2> Passer une commande</h2>
+
+<form data-order-step="run" id="order-form" class="generic-form hidden" style="display: block;" method="POST" action="<?= $requestUrl ?>/user">
+
+    <!-- Champ caché stockant le prix de vente du produit alimentaire sélectionné -->
+    <input name="salePrice" value="3" type="hidden">
+
+    <aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <em class="total-error-count">1</em> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+    <fieldset>
+        <legend>Ajouter un article</legend>
+        <ul>
+            <li>
+                <label for="meal">Nom :</label>
+                <select id="meal" name="meal">
+
+                <?php foreach ($meals as $meals): ?>
+
+                        <option id="meal-<?= $meals['Id']?>" value="<?= $meals['Id']?>"><?= $meals['Name']?></option>
+
+                <?php endforeach ?>
+                                        
+                </select>
+
+                <article id="meal-details" class="meal-details no-left-label">
+
+                    <img src="http://10.10.109.11/Restaurant%20(corrig%C3%A9)/application/www/images/meals/coca.jpg" alt="Photo du produit">
+                    <p>Mmmm, le Coca-Cola avec 10 morceaux de sucres et tout plein de caféine !</p>
+                    <span>Prix : <strong id= "meal-details strong">3,00</strong>&nbsp; $</span>
+                </article>
+            </li>
+            <li>
+                <label for="quantity">Quantité :</label>
+                <input id="quantity" class="quantity" maxlength="2" name="quantity" data-name="Quantité" data-type="positive-integer" data-required="" type="text">
+            </li>
+            <li>
+                <button id="addRecap" class="button button-primary no-left-label" type="submit">Ajouter</button>
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Récapitulatif de la commande</legend>
+        <section id="order-summary"><table class="generic-table">
+            <tbody>
+            <tr>
+                <td class="basket-empty">Votre panier est vide pour le moment !</td>
+            </tr>
+        </tbody>
+    </table></section>
+    </fieldset>
+</form>
+
+<ul class="link-list">
+    <li>
+        <button id="validate-order" class="button button-primary">Valider la commande</button>
+        <a class="button button-cancel small" href="<?= $requestUrl ?>/">Annuler</a>
+    </li>
+</ul>
+
+
+<!-- Classes de gestion du formulaire de commande -->
+<!-- Ce code JavaScript n'est chargé QUE depuis l'URL /order/payment/success -->
+<script type="text/javascript" src="<?= $wwwUrl?>/js/classes/OrderFrom.js"></script>    </main>

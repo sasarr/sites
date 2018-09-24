@@ -1,0 +1,42 @@
+<?php
+
+include("header.html");
+?>
+
+<main id=addpost class="container">
+	<h2><i class="fas fa-pencil-alt"></i>Rédiger un nouvel article </h2>
+
+	<form method="POST" action="controleur/add_post.php">
+		<fieldset>
+			<legend>Nouvel article</legend>
+
+			<label for="titre">Titre:</label>
+			<input type="text" name="titre">
+
+			<label for="article">Article:</label>
+			<textarea name="article" id="article" rows="10" cols="50" value=""></textarea>
+
+			<label for="auteur">Auteur:</label>
+			<select name="auteur" id="auteur" >
+				<option value="1">John Doe</option>
+				
+			</select>
+
+			<label for="categorie">Catégorie:</label>
+			<select name="categorie" id="categorie">
+				<option value="1">Jeux-Vidéos</option>
+				<option value="2">Cinéma</option>
+				<option value="3">Sport</option>	
+			</select>
+
+			<div>
+				<input type="submit" value="Enregistrer" />
+				<input type="submit" value="Annuler" />
+			</div>
+
+		</fieldset>
+	</form>
+</main>
+
+<?php
+include("footer.html");

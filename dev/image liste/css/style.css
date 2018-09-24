@@ -1,0 +1,30 @@
+em{
+	color: red;
+	font-weight: bolder;
+}
+
+ul{
+	width: 800px
+}
+
+ li{
+ 	display: inline-block;
+ 	list-style-type: none; 
+ 	transition-property: opacity;
+ 	transition: 3s;
+ }
+
+img{
+	margin:1em;
+	padding: 0.5em;
+	
+}
+
+img:hover{
+	background-color: silver;
+}
+
+.selected{
+	background-color: forestgreen;
+
+}

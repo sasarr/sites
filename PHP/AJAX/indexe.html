@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<h1><i class="fas fa-flask"></i> Exercice AJAX</h1>
+	<section id="contenu">
+
+		<p>Résultats....</p>
+	</section>
+
+	<section>
+		<form method="post">
+
+			<fieldset>
+			<legend> <i class="fas fa-question-circle"></i> Votre choix</legend>
+			<p>
+				<input type="radio" name="choix" value="html" id="html" /> <label for="html">Récupérer un contenu HTML du serveur</label>
+			</p>
+			<p>
+         		<input type="radio" name="choix" value="json" id="json" /> <label for="json">Récupérer un contenu JSON du serveur</label>
+         	</p>
+         	<p>
+           		<input type="radio" name="choix" value="films" id="films" /> <label for="films">Récupérer les films</label>
+           	</p>
+
+			<input type="submit" value="Exécuter" id="AJAX" />
+			</fieldset>
+			
+			
+
+		</form>
+	</section>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

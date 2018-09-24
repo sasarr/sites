@@ -1,0 +1,38 @@
+<?php
+
+include("header.html");
+?>
+
+<main id="admin" class="container">
+	<h2><i class="fas fa-cogs"></i> Panneau d'administration</h2>
+
+	<a href="add_post.php">Rédiger un nouvel article</a>
+	<h3>Liste des articles</h3>
+
+	<table>
+		<tr>
+			<th>Titre</th>
+			<th>Article</th>
+			<th>Auteur</th>
+			<th>Catégorie</th>
+		</tr>
+
+<?php foreach($infoadmin as $admin): ?>
+		<tr>
+			<td><?= $admin['Titre'] ?></td>
+			<td><?= $admin['Contenu'] ?></td>
+			<td><?= $admin['Nom'] ?></td>
+			<td><?= $admin['Nomcat'] ?></td>
+			<td>
+				<a href="edit_post.php"><i class="fas fa-pencil-alt"></i></a>
+				<a href="controleur/delete_post.php"><i class="fas fa-times"></i></a>
+			</td>
+
+		</tr>
+		<?php endforeach; ?>
+	</table>
+
+</main>
+
+<?php
+include("footer.html");

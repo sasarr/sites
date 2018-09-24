@@ -1,0 +1,141 @@
+*{
+	box-sizing: border-box;
+}
+
+
+body{
+	background-color: #f2f1f4;
+	color: #6a6d70;
+	padding: 3%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.7;
+}
+
+a{
+	text-decoration: none;
+	color: #65bcbe;
+}
+
+h1, h2, h3,h4, nav{
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: lighter;
+	color: #30a894;
+}
+
+header{
+	text-align: center;
+}
+
+nav a{
+	background-color: #30a894;
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding-top: 30px ;
+	padding-bottom:30px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 1.2em;
+}
+
+nav a:hover{
+	background-color: #38b5a0;
+}
+
+	
+header p{
+	margin-bottom: 0px;
+}
+
+h1, h2, h3,h4{
+	border-bottom: 1px solid #30a894;
+}
+
+h1{
+	margin-top: 51px;
+	margin-bottom: 21px;
+	font-size: 3rem;
+	line-height: 1.7;
+}
+
+picture img{
+	width: 100%;
+}
+
+aside{
+	display: none;
+}
+
+footer{
+	text-align: center;
+	font-size: 0.8em;
+	margin-top: 60px;
+}
+
+footer img{
+	width: 55px;
+}
+
+/************ TABLETTE ******/
+
+@media screen and (min-width: 768px){
+
+	article, aside{
+		padding-left: 20px;
+		padding-right:20px;
+	}
+
+	aside {
+		display: block;
+		background-color: #b8dcb1;
+		color:#314c35;
+		padding-top: 5px;
+		padding-bottom: 25px;
+	}
+
+	aside h3{
+		font-size: 1.9rem;
+		margin-bottom: 25px;
+		margin-top: 35px;
+	}
+
+	footer{
+		margin-top: 50px;
+		font-size: 0.9em;
+	}
+
+}
+
+/************DESKTOP*********/
+
+@media screen and (min-width: 1024px){
+
+	body{
+		width: 80%;
+		margin: auto;
+	}
+
+	nav{
+		background-color: #30a894;
+	}
+
+	nav a{
+		display: inline-block;
+		width: 33.33%;
+	}
+
+	section{
+		display: inline-block;
+		width: 70%;
+	}
+
+	aside{
+		display:inline-block;
+		width: 30%;
+	}
+
+	section, aside{
+		vertical-align: top;
+	}
+
+}

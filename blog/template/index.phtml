@@ -1,0 +1,22 @@
+<?php
+
+include("header.html");
+?>
+
+<main id=home class="container">
+	<a href="index.php"><i class="fas fa-home"></i>Acceuil</a>
+
+
+	<?php foreach($allinfo as $var): ?>
+			<a href="show_post.php"><h3><?= $var['Titre'] ?></h3></a>
+
+		    <p>
+		    <?php if(strlen($var['Contenu']) > 60){echo(substr($var['Contenu'], 0,60) . '[..]');}?>
+			</p>
+
+			<p>Rédigé par <?= $var['Nom'] ?> le <?= $var['Date'] ?></p>				
+	<?php endforeach; ?>
+
+<?php
+
+include("footer.html");

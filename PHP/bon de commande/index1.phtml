@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> INDEX</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+		<h1>Bon de commande</h1>
+		
+
+		<table>
+		<caption>Liste des commandes</caption>
+
+		 <thead>
+			<tr>
+				<th>Commande</th>
+				<th>Date de la commade</th>
+				<th>Date de livraison</th>
+				<th>Statut</th>
+			</tr>
+		</thead> 
+
+
+		<tbody>
+
+			<?php foreach($orders as $ligne) :?>
+				<tr>
+
+
+			
+				<?php foreach ($ligne as $key => $value): ?>
+					<?php if ($key == "ordernumber") : ?>
+
+							<td>
+								<a href="http://localhost/PHP/bon%20de%20commande/order.php?valeur=<?=$value ?>"> <?=  $value ?> </a>
+							</td>
+							
+						<?php else: ?>
+						
+							<td> <?=  $value ?> </td>
+						<?php endif; ?>
+			<?php endforeach; ?>	
+
+
+				</tr>
+			<?php endforeach; ?>	
+
+		</tbody>
+			
+		</table>
+</body>
+</html>

@@ -1,0 +1,137 @@
+[1, 2, 3, 9] <= premier tableau de test
+---------------------------------------
+[1, 2, 4, 4] <= second tableau de test
+
+Consigne:
+	Le but de l'algo est de trouver si oui ou non 
+	un couple de valeur au sein d'un meme tableau 
+	peut etre egale a 8...
+
+
+nous connaissons nos entr\Uffffffff/probleme, 
+nous connaissons nos sorties/solution.
+
+on va commencer par eloigner le probleme
+de la syntaxe, penssez a votre probleme 
+avec des mots humain ( pas des mots issue
+des languages de programmation )
+
+
+---------------------------------------------------------------------------
+Version 1
+
+fonction RetrouveUnePaireDeValeur( TableauDeValeur, ValeurARetrouver )
+{
+	// le contenu de cette fonction devra retourner VRAI ou FAUX
+}
+
+---------------------------------------------------------------------------
+
+Une fois ce "pseudo-code" formalis\Uffffffffl faut reflechir au probleme
+on se rend compte que c'est un couple de valeur qu'il faut ajouter 
+l'une a l'autre pour atteindre la valeur a retrouver. 
+
+Il faut donc pouvoir tester toutes les combinaisons d'additions jusqu'a
+tomber sur une addition qui arrive bien a mon resultat.
+
+Pour parcourir un tableau une structure logique est disponnible en programmation
+c'est la boucle 
+
+on reprend notre "pseudo-code" et on viens ajouter une boucle qui parcourt notre tableau
+
+
+---------------------------------------------------------------------------
+Version 2
+
+fonction RetrouveUnePaireDeValeur( TableauDeValeur, ValeurARetrouver )
+{
+	pour chaque element du "TableauDeValeur"
+	{
+		// ici on tourne sur toute les valeurs, et on ne fait rien de plus pour l'instant
+	}
+}
+
+---------------------------------------------------------------------------
+
+ici je vais parcourir une fois mon tableau, dans notre tete on va se dire que ce sera le cot\Uffffffffgauche de notre addition ( valeur1 )
+
+valeur1 + valeur2 = ? peut etre resultat ? 
+
+il va falloir que je parcours le tableau une autre fois pour le cot\Uffffffffroit de mon addition ( valeur2 )
+encore une fois on va ajouter en "pseudo-code" une boucle.
+
+---------------------------------------------------------------------------
+Version 3
+
+fonction RetrouveUnePaireDeValeur( TableauDeValeur, ValeurARetrouver )
+{
+	pour chaque element du "TableauDeValeur"
+	{
+		tu va tester toute les valeurs du tableau 
+	}
+}
+
+---------------------------------------------------------------------------
+
+ici dans ma version 3 la ligne 71 semble plus complexe car elle englobe en r\Uffffffffit\Ufffffffflusieurs mechanique, on parle de test, on parle de "toute les valeurs"
+
+essayons de detailler cette ligne en l'eclatant sur plusieurs lignes 
+
+
+---------------------------------------------------------------------------
+Version 4
+
+fonction RetrouveUnePaireDeValeur( TableauDeValeur, ValeurARetrouver )
+{
+	pour chaque element du "TableauDeValeur" stocke moi la valeur de la boucle actuelle dans "valeur1"
+	{
+		pour chaque element du "TableauDeValeur" stocke moi la valeur de la boucle actuelle dans "valeur2"
+		{
+			SI "valeur1" + "valeur2" == "ValeurARetrouver"
+			{
+				Une Combinaison  egale a "ValeurARetrouver" est possible dans ce tableau, RETOURNE VRAI
+				Arrete la fonction, on a trouv\Uffffffffne paire on sait que le resultat est vrai
+			}
+		}
+	}
+
+	Si on arrive ici, on a compar\Uffffffffoutes les valeurs du tableau entre elles ( double boucle )
+	RETOURNE FAUX
+}
+
+---------------------------------------------------------------------------
+
+
+si on a un tableau commme [4] notre  version 4 va tenter d'additionner la valeur a elle meme 
+et donc nous renvoyer TRUE, mais la consigne nous dis qu'il faut trouver une paire de valeur
+et donc il faut tester quand les deux boucles sont sur la meme case pour ignorer ce cas
+
+---------------------------------------------------------------------------
+Version 5
+
+fonction RetrouveUnePaireDeValeur( TableauDeValeur, ValeurARetrouver )
+{
+	pour chaque element du "TableauDeValeur" stocke moi la valeur de la boucle actuelle dans "valeur1"
+	{
+		pour chaque element du "TableauDeValeur" stocke moi la valeur de la boucle actuelle dans "valeur2"
+		{
+			SI i == j 
+			{
+				PASSE AU PROCHAIN TOUR DE BOUCLE
+			}
+
+			SI "valeur1" + "valeur2" == "ValeurARetrouver"
+			{
+				Une Combinaison  egale a "ValeurARetrouver" est possible dans ce tableau, RETOURNE VRAI
+				Arrete la fonction, on a trouv\Uffffffffne paire on sait que le resultat est vrai
+			}
+		}
+	}
+
+	Si on arrive ici, on a compar\Uffffffffoutes les valeurs du tableau entre elles ( double boucle )
+	RETOURNE FAUX
+}
+
+---------------------------------------------------------------------------
+
+

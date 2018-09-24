@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paint</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<section>
+<div id="fond">
+<div id="canvasDiv">
+<canvas id="draw" width="1000" height="400" style="border:1px solid #000000;">
+</canvas>
+</div>
+
+
+<form>
+
+
+  <div>
+  <label for="Outils">Outils</label>
+  <button class="gomme"> <i class="fas fa-eraser"></i></button>
+  <button class="palette"><i class="fas fa-palette"></i></button>
+  </div>
+
+  <div >
+  <label for="couleur"> Couleurs:</label>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color:black "></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color:#9a5444 "></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color: #e34f2d  "></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color:  #f9d14d "></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color: #23984e  "></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color: #57cfcd"></div>
+  <div style="border:  1px solid grey ;display: inline-block;border-radius: 50%;padding: 10px; margin-top: 20px;background-color:  #045387"></div>
+ 
+  </div>
+
+  <div>
+    <p>
+      <label for="epaisseur">Epaisseur</label> 
+      <input type="submit" value="Fin">
+      <input type="submit" value="Normale">    
+      <input type="submit" value="Epais">    
+      </p>
+  </div>
+</form>
+</div>
+</section>
+<script src ="paint.js"></script>
+</body>
+</html> 

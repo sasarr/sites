@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random -->
+<html lang="fr" dir="ltr" class=""><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script async="" src="./Math.random() - JavaScript _ MDN_files/analytics.js"></script><script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  <title>Math.random() - JavaScript | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+
+  
+<link rel="preload" href="https://developer.mozilla.org/static/fonts/locales/ZillaSlab-Regular.f9de6143fdfa.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="home" href="https://developer.mozilla.org/fr/">
+    <link rel="license" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#license">
+  
+
+  
+    
+    
+
+    <link href="./Math.random() - JavaScript _ MDN_files/mdn.9e17a09fbd06.css" rel="stylesheet" type="text/css">
+
+    
+  
+
+    <link href="./Math.random() - JavaScript _ MDN_files/wiki.6be7bc97be9a.css" rel="stylesheet" type="text/css">
+
+
+    
+
+  <link href="./Math.random() - JavaScript _ MDN_files/locale-fr.ca0bca387b42.css" rel="stylesheet" type="text/css">
+
+  
+    <script type="text/javascript" src="./Math.random() - JavaScript _ MDN_files/mozilla-dnthelper.3936bd979b1d.js" charset="utf-8"></script>
+    
+
+<script>
+    // only load GA if DNT is not enabled
+    if (Mozilla && !Mozilla.dntEnabled()) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36116321-5', 'mozilla.org');
+        ga('set', 'anonymizeIp', true);
+
+        
+
+        // dimension9 == "Section editing"
+        
+            // dimension12 == 'Page Revision'
+            ga('set', 'dimension12', '1381598');
+            // dimension17 == 'English Slug'
+            ga('set', 'dimension17', 'Web/JavaScript/Reference/Global_Objects/Math/random');
+
+        (function() {
+            // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+            var win = window;
+            var removeUtms = function(){
+                var location = win.location;
+                if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                    win.history.replaceState({}, '', location.pathname);
+                }
+            };
+
+            ga('send', 'pageview', {'hitCallback': removeUtms});
+        })();
+    }
+</script>
+
+  
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="Documentation du Web - MDN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/fr/search/xml" title="Documentation du Web - MDN">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+  <link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  
+  <link rel="dns-prefetch" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+  <link rel="preconnect" href="https://interactive-examples.mdn.mozilla.net/" pr="0.75">
+
+  <link rel="alternate" type="application/json" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random$json">
+  <link rel="canonical" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random">
+
+  
+  <link rel="alternate" hreflang="fr" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random" title="Math.random()">
+  
+    
+      <link rel="alternate" hreflang="en-US" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="ca" href="https://developer.mozilla.org/ca/docs/Web/JavaScript/Referencia/Objectes_globals/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="de" href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/math.random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="es" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="it" href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="ja" href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="ko" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="pl" href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="pt-BR" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="ru" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="uk" href="https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+      <link rel="alternate" hreflang="zh-CN" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="Math.random()">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Math.random()">
+  <meta property="og:url" content="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random">
+  <meta name="twitter:url" content="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random">
+  <meta name="twitter:title" content="Math.random()">
+  
+  <meta property="og:description" content="La fonction Math.random() renvoie un nombre flottant pseudo-aléatoire compris dans l&#39;intervalle [0, 1[ (ce qui signifie que 0 est compris dans l&#39;intervalle mais que 1 en est exclu) selon une distribution approximativement uniforme sur cet intervalle. Ce nombre peut ensuite être multiplié afin de couvrir un autre intervalle. La graine (seed) du générateur est choisie par l&#39;algorithme et ne peut pas être choisie ou réinitialisée par l&#39;utilisateur.">
+  <meta name="description" content="La fonction Math.random() renvoie un nombre flottant pseudo-aléatoire compris dans l&#39;intervalle [0, 1[ (ce qui signifie que 0 est compris dans l&#39;intervalle mais que 1 en est exclu) selon une distribution approximativement uniforme sur cet intervalle. Ce nombre peut ensuite être multiplié afin de couvrir un autre intervalle. La graine (seed) du générateur est choisie par l&#39;algorithme et ne peut pas être choisie ou réinitialisée par l&#39;utilisateur.">
+  <meta name="twitter:description" content="La fonction Math.random() renvoie un nombre flottant pseudo-aléatoire compris dans l&#39;intervalle [0, 1[ (ce qui signifie que 0 est compris dans l&#39;intervalle mais que 1 en est exclu) selon une distribution approximativement uniforme sur cet intervalle. Ce nombre peut ensuite être multiplié afin de couvrir un autre intervalle. La graine (seed) du générateur est choisie par l&#39;algorithme et ne peut pas être choisie ou réinitialisée par l&#39;utilisateur.">
+  
+
+<link href="./Math.random() - JavaScript _ MDN_files/wiki-compat-tables.481447ac27b5.css" type="text/css" rel="stylesheet"><script async="" data-manual="true" src="./Math.random() - JavaScript _ MDN_files/syntax-prism.05dc5663d445.js"></script></head>
+<body data-slug="Web/JavaScript/Reference/Objets_globaux/Math/random" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script>
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        (function(){
+  var FLAGS = {
+    'kumaediting': false,'page_move': false,'section_edit': false,'spam_checks_enabled': true,'spam_submissions_enabled': false,'spam_admin_override': false,'spam_spammer_override': false,'spam_testing_mode': false,'sg_task_completion': false
+    },
+    SWITCHES = {
+    'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'foundation_callout': false,'helpful-survey-2': true,'wiki_spam_training': true,'registration_disabled': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://developer.mozilla.org/static/';
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/fr/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.mozilla.org/static/build/styles/editor-content.7f97ba7f9e73.css','https://developer.mozilla.org/static/build/styles/editor-locale-fr.ca0bca387b42.css',
+                ],
+
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/styles/wiki-compat-tables.481447ac27b5.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.mozilla.org/static/build/js/syntax-prism.05dc5663d445.js',],
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/js/wiki-compat-tables.003f4acf76ea.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+
+    })(this);
+</script>
+    
+    <ul id="nav-access">
+  <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#content" id="skip-main">Aller au contenu principal</a></li>
+  <li><a id="skip-language" href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#language">Choisir la langue</a></li>
+  <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#q" id="skip-search">Aller à la recherche</a></li>
+</ul>
+
+    <!-- Header -->
+    <header id="main-header" class="header-main">
+      <a href="https://developer.mozilla.org/fr/" class="logo">Documentation du Web - MDN</a>
+      <div class="nav-toolbox-wrapper">
+        <nav id="main-nav" class="nav-main" role="navigation">
+    <ul>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/fr/docs/Web">Technologies
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28">
+    <path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path>
+</svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-tech-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML">HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/CSS">CSS</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/Guide/Graphics">Infographies</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/HTTP">HTTP</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/API">APIs / DOM</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions">Extensions des navigateurs</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/MathML">MathML</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/fr/docs/Learn">Guides et références
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28">
+    <path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path>
+</svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-learn-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Learn">Apprendre le développement web</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/Tutorials">Tutoriels</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/Reference">Références</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/Guide">Guides pour développeurs</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web/Accessibility">Accessibilité</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Games">Développement de jeux</a></li>
+                    <li><a href="https://developer.mozilla.org/fr/docs/Web">... plus de docs</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/fr/docs/MDN/Feedback">Votre avis
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28">
+    <path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"></path>
+</svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-contact-submenu">
+              <div class="submenu-column">
+                <ul>
+                  <li>
+                      <a href="https://support.mozilla.org/">Demander de l'aide pour Firefox
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+    <path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path>
+</svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://stackoverflow.com/">Demander de l'aide pour le développement web
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+    <path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path>
+</svg>
+                      </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                      <a href="https://developer.mozilla.org/fr/docs/MDN/Community">Rejoignez la communauté MDN</a>
+                  </li>
+                  <li>
+                      <a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random">Signaler un problème de contenu
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+    <path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path>
+</svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Signaler un bug
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+    <path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"></path>
+</svg>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </li>
+  </ul>
+</nav>
+        <div id="toolbox" class="toolbox">
+  <ul>
+    
+    <li class="nav-login"><div class="login">
+    
+        
+        <a href="https://developer.mozilla.org/users/github/login/?next=%2Ffr%2Fdocs%2FWeb%2FJavaScript%2FReference%2FObjets_globaux%2FMath%2Frandom" class="login-link js-login-link" data-service="GitHub" rel="nofollow">
+            Connexion<svg class="icon icon-github" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28">
+    <title>Github</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    
+</div></li>
+  </ul>
+</div>
+      </div>
+      <form id="nav-main-search" action="https://developer.mozilla.org/fr/search" method="get" role="search" class="nav-main-search">
+  <div class="search-wrap">
+    <label for="main-q" class="offscreen">Rechercher</label>
+    <input type="search" id="main-q" name="q" placeholder="Rechercher" data-value="" value="" aria-hidden="true">
+    <span class="search-trigger">
+        <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28" aria-hidden="true">
+    <path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 0 1-1.406-.594l-5.359-5.344a10.971 10.971 0 0 1-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z"></path>
+</svg>
+    </span>
+    <button type="submit" class="offscreen">Rechercher</button>
+    <button type="button" id="close-header-search" class="close-header-search transparent">
+        <span class="offscreen">Fermer la recherche</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true">
+    <path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"></path>
+</svg>
+    </button>
+  </div>
+</form>
+    </header> 
+
+  <!-- Content will go here -->
+  <main id="content" role="main">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li>
+          <button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false">
+              <svg class="icon icon-language" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M10.219 16.844c-.031.109-.797-.25-1-.328-.203-.094-1.125-.609-1.359-.766s-1.125-.891-1.234-.938a28.275 28.275 0 0 1-2.094 2.828c-.281.328-1.125 1.391-1.641 1.719-.078.047-.531.094-.594.063.25-.187.969-1.078 1.281-1.437.391-.453 2.25-3.047 2.562-3.641.328-.594 1.312-2.562 1.359-2.75-.156-.016-1.391.406-1.719.516-.313.094-1.172.297-1.234.344-.063.063-.016.25-.047.313s-.313.203-.484.234a1.647 1.647 0 0 1-.734 0c-.203-.047-.391-.25-.438-.328 0 0-.063-.094-.078-.359.187-.063.5-.078.844-.172s1.188-.344 1.641-.5 1.328-.484 1.594-.547c.281-.047.984-.516 1.359-.641s.641-.281.656-.203 0 .422-.016.516c-.016.078-.766 1.547-.875 1.781-.063.125-.5.953-1.203 2.047.25.109.781.328 1 .438.266.125 2.125.906 2.219.938s.266.75.234.875zM7.016 9.25c.047.266-.031.375-.063.438-.156.297-.547.5-.781.594s-.625.187-.938.187c-.141-.016-.422-.063-.766-.406-.187-.203-.328-.75-.266-.688s.516.125.719.078.688-.187.906-.25c.234-.078.703-.203.859-.219.156 0 .281.063.328.266zm10.906 2.016l.984 3.547-2.172-.656zM.609 23.766l10.844-3.625V4.016L.609 7.657v16.109zM20 18.813l1.594.484-2.828-10.266-1.563-.484-3.375 8.375 1.594.484.703-1.719 3.297 1.016zM12.141 3.781l8.953 2.875V.718zM17 24.453l2.469.203-.844 2.5L18 26.125c-1.266.812-2.828 1.437-4.312 1.687-.453.094-.969.187-1.422.187h-1.313c-1.656 0-4.672-.984-5.984-1.937-.094-.078-.125-.141-.125-.25 0-.172.125-.297.281-.297.141 0 .875.453 1.078.547 1.406.703 3.375 1.344 4.953 1.344 1.953 0 3.281-.25 5.063-1.016.516-.234.969-.531 1.453-.797zm7-16.859v16.859c-12.078-3.844-12.094-3.844-12.094-3.844C11.656 20.718.453 24.5.297 24.5a.3.3 0 0 1-.281-.203c0-.016-.016-.031-.016-.047V7.406c.016-.047.031-.125.063-.156.094-.109.219-.141.313-.172.047-.016 1-.328 2.328-.781v-6l8.719 3.094C11.532 3.36 21.251 0 21.392 0c.172 0 .313.125.313.328v6.531z"></path>
+</svg>
+              <span>Langues</span>
+          </button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="en-US" title="Anglais américain">English (US) (en-US)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ca/docs/Web/JavaScript/Referencia/Objectes_globals/Math/random" data-locale="ca" title="Catalan">Català (ca)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/math.random" data-locale="de" title="Allemand">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random" data-locale="es" title="Espagnol">Español (es)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="it" title="Italien">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="ja" title="Japonais">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="ko" title="Coréen">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random" data-locale="pl" title="Polonais">Polski (pl)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="pt-BR" title="Portugais brésilien">Português (do&nbsp;Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="ru" title="Russe">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="uk" title="Ukrainien">Українська (uk)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random" data-locale="zh-CN" title="Chinois (simplifié)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+              
+
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit">
+          <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random$edit" class="button neutral" id="edit-button" rel="nofollow">
+              <svg class="icon icon-pencil" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M5.672 24l1.422-1.422-3.672-3.672L2 20.328V22h2v2h1.672zm8.172-14.5a.329.329 0 0 0-.344-.344.368.368 0 0 0-.266.109l-8.469 8.469a.366.366 0 0 0-.109.266c0 .203.141.344.344.344a.368.368 0 0 0 .266-.109l8.469-8.469a.366.366 0 0 0 .109-.266zM13 6.5l6.5 6.5-13 13H0v-6.5zM23.672 8c0 .531-.219 1.047-.578 1.406L20.5 12 14 5.5l2.594-2.578c.359-.375.875-.594 1.406-.594s1.047.219 1.422.594l3.672 3.656c.359.375.578.891.578 1.422z"></path>
+</svg>
+              Modifier
+          </a>
+      </li>
+      
+
+        
+
+        <li class="page-buttons-advanced">
+            <button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false">
+                <svg class="icon icon-gear" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm8-1.703v3.469c0 .234-.187.516-.438.562l-2.891.438a8.86 8.86 0 0 1-.609 1.422c.531.766 1.094 1.453 1.672 2.156.094.109.156.25.156.391s-.047.25-.141.359c-.375.5-2.484 2.797-3.016 2.797a.795.795 0 0 1-.406-.141l-2.156-1.687a9.449 9.449 0 0 1-1.422.594c-.109.953-.203 1.969-.453 2.906a.573.573 0 0 1-.562.438h-3.469c-.281 0-.531-.203-.562-.469l-.438-2.875a9.194 9.194 0 0 1-1.406-.578l-2.203 1.672c-.109.094-.25.141-.391.141s-.281-.063-.391-.172c-.828-.75-1.922-1.719-2.578-2.625a.607.607 0 0 1 .016-.718c.531-.719 1.109-1.406 1.641-2.141a8.324 8.324 0 0 1-.641-1.547l-2.859-.422A.57.57 0 0 1 0 15.705v-3.469c0-.234.187-.516.422-.562l2.906-.438c.156-.5.359-.969.609-1.437a37.64 37.64 0 0 0-1.672-2.156c-.094-.109-.156-.234-.156-.375s.063-.25.141-.359c.375-.516 2.484-2.797 3.016-2.797.141 0 .281.063.406.156L7.828 5.94a9.449 9.449 0 0 1 1.422-.594c.109-.953.203-1.969.453-2.906a.573.573 0 0 1 .562-.438h3.469c.281 0 .531.203.562.469l.438 2.875c.484.156.953.344 1.406.578l2.219-1.672c.094-.094.234-.141.375-.141s.281.063.391.156c.828.766 1.922 1.734 2.578 2.656a.534.534 0 0 1 .109.344c0 .141-.047.25-.125.359-.531.719-1.109 1.406-1.641 2.141.266.5.484 1.016.641 1.531l2.859.438a.57.57 0 0 1 .453.562z"></path>
+</svg>
+                <span>Avancé</span>
+            </button>
+            <div class="submenu js-submenu" id="advanced-menu-submenu">
+                <!-- this page -->
+                <div class="submenu-column">
+                    <div class="title">Avancé</div>
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random$history" rel="nofollow">Historique</a></li>
+                        
+                        
+                        
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#" onclick="return window.print();">Imprimer cet article</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+
+      <div class="document-title">
+        
+
+        <h1>Math<wbr>.random()</h1>
+      </div>
+    </div>
+  </div>
+  
+  <div id="toc" class="toc">
+    <div class="center">
+      <div class="toc-head">Aller à :</div>
+        <ol class="toc-links">
+          <li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#Syntaxe" rel="internal" class="">Syntaxe</a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#Exemples" rel="internal" class="toc-current">Exemples</a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#Sp%C3%A9cifications" rel="internal" class="toc-current">Spécifications</a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#Compatibilit%C3%A9_des_navigateurs" rel="internal" class="">Compatibilité des navigateurs</a>
+        </li></ol>
+    </div>
+  </div>
+  
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-main wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    <div></div>
+
+<p>La fonction <code><strong>Math.random()</strong></code> renvoie un nombre flottant pseudo-aléatoire compris dans l'intervalle <code>[0, 1[</code> (ce qui signifie que 0 est compris dans l'intervalle mais que 1 en est exclu) selon une distribution approximativement uniforme sur cet intervalle. Ce nombre peut ensuite être multiplié afin de couvrir un autre intervalle. La graine (<em>seed</em>) du générateur est choisie par l'algorithme et ne peut pas être choisie ou réinitialisée par l'utilisateur.</p>
+
+<div><iframe src="./Math.random() - JavaScript _ MDN_files/math-random.html" class="interactive interactive-js " width="100%" frameborder="0" height="250"></iframe></div>
+
+<div class="note">
+<p><strong>Note :</strong> <code>Math.random()</code> <strong>ne fournit pas</strong> de nombres aléatoires propres à une cryptographie sécurisée. Les résultats de cette méthode ne doivent pas être utilisées dans des applications liées à la sécurité. À la place, on préfèrera utiliser l'API Web Crypto et plus précisément la méthode <a href="https://developer.mozilla.org/fr/docs/Web/API/RandomSource/getRandomValues" title="La méthode RandomSource.getRandomValues() permet d’obtenir des valeurs pseudo-aléatoires cryptographiquement satisfaisantes. Le tableau donné en paramètre est rempli avec des nombres pseudo-aléatoires."><code>window.crypto.getRandomValues()</code></a>.</p>
+</div>
+
+<h2 id="Syntaxe">Syntaxe</h2>
+
+<pre class="syntaxbox">Math.random()</pre>
+
+<h3 id="Valeur_de_retour" class="highlight-spanned"><span class="highlight-span">Valeur de retour</span></h3>
+
+<p>Un nombre flottant pseudo-aléatoire, généré entre 0 (inclus) et 1 (exclu)</p>
+
+<h2 id="Exemples">Exemples</h2>
+
+<p>En JavaScript, les nombres sont représentés comme des nombres flottants selon la norme IEEE 754 et les arrondis sont pris aux plus près. Aussi, les intervalles revendiqués par les fonctions ci-après (en dehors de <code>Math.random()</code>) ne sont pas théoriquement et précisément exacts. Si on utilise des bornes supérieures très grande (2<sup>53</sup> ou plus), il est alors possible, dans de très rares cas, d'obtenir la borne supérieure comme résultat alors que celle-ci devrait être exclue de l'intervalle.</p>
+
+<h3 id="Obtenir_un_nombre_aléatoire_entre_0_et_1" class="highlight-spanned"><span class="highlight-span">Obtenir un nombre aléatoire entre 0 et 1</span></h3>
+
+<pre class="brush: js line-numbers  language-js"><code class=" language-js"><span class="token comment" spellcheck="true">// On renvoie un nombre aléatoire entre 0 (inclus) et 1 (exclus)</span>
+<span class="token keyword">function</span> <span class="token function">getRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Obtenir_un_nombre_aléatoire_dans_un_intervalle" class="highlight-spanned"><span class="highlight-span">Obtenir un nombre aléatoire dans un intervalle</span></h3>
+
+<pre class="brush: js line-numbers  language-js"><code class=" language-js"><span class="token comment" spellcheck="true">// On renvoie un nombre aléatoire entre une valeur min (incluse) </span>
+<span class="token comment" spellcheck="true">// et une valeur max (exclue)</span>
+<span class="token keyword">function</span> <span class="token function">getRandomArbitrary</span><span class="token punctuation">(</span>min<span class="token punctuation">,</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Obtenir_un_entier_aléatoire_dans_un_intervalle_ouvert_à_droite" class="highlight-spanned"><span class="highlight-span">Obtenir un entier aléatoire dans un intervalle ouvert à droite</span></h3>
+
+<pre class="brush: js line-numbers  language-js"><code class=" language-js"><span class="token comment" spellcheck="true">// On renvoie un entier aléatoire entre une valeur min (incluse)</span>
+<span class="token comment" spellcheck="true">// et une valeur max (exclue).</span>
+<span class="token comment" spellcheck="true">// Attention : si on utilisait Math.round(), on aurait une distribution</span>
+<span class="token comment" spellcheck="true">// non uniforme !</span>
+<span class="token keyword">function</span> <span class="token function">getRandomInt</span><span class="token punctuation">(</span>min<span class="token punctuation">,</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div class="warning">
+<p><strong>Attention !</strong> Utiliser <code>Math.round()</code> entraînerait une distribution non-uniforme et réduirait le caractère aléatoire de la méthode.</p>
+</div>
+
+<h3 id="Obtenir_un_entier_aléatoire_dans_un_intervalle_fermé" class="highlight-spanned"><span class="highlight-span">Obtenir un entier aléatoire dans un intervalle fermé</span></h3>
+
+<pre class="brush: js line-numbers  language-js"><code class=" language-js"><span class="token comment" spellcheck="true">// On renvoie un entier aléatoire entre une valeur min (incluse)</span>
+<span class="token comment" spellcheck="true">// et une valeur max (incluse).</span>
+<span class="token comment" spellcheck="true">// Attention : si on utilisait Math.round(), on aurait une distribution</span>
+<span class="token comment" spellcheck="true">// non uniforme !</span>
+<span class="token keyword">function</span> <span class="token function">getRandomIntInclusive</span><span class="token punctuation">(</span>min<span class="token punctuation">,</span> max<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>max<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max <span class="token operator">-</span> min <span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> min<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Spécifications">Spécifications</h2>
+
+<table class="standard-table">
+ <tbody>
+  <tr>
+   <th scope="col">Spécification</th>
+   <th scope="col">État</th>
+   <th scope="col">Commentaires</th>
+  </tr>
+  <tr>
+   <td><a rel="noopener" hreflang="en" href="https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf" title="La spécificaction &#39;ECMAScript 1st Edition (ECMA-262)&#39;" class="external external-icon" lang="en">ECMAScript 1st Edition (ECMA-262)</a></td>
+   <td><span class="spec-Standard">Standard</span></td>
+   <td>Définition initiale. Implémentée avec JavaScript 1.0 (UNIX) et 1.1 (toutes plateformes).</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/5.1/#sec-15.8.2.14" hreflang="en" lang="en" class="external external-icon" rel="noopener">ECMAScript 5.1 (ECMA-262)<br><small lang="fr">La définition de 'Math.random' dans cette spécification.</small></a></td>
+   <td><span class="spec-Standard">Standard</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-math.random" hreflang="en" lang="en" class="external external-icon" rel="noopener">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="fr">La définition de 'Math.random' dans cette spécification.</small></a></td>
+   <td><span class="spec-Standard">Standard</span></td>
+   <td>&nbsp;</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.github.io/ecma262/#sec-math.random" hreflang="en" lang="en" class="external external-icon" rel="noopener">ECMAScript Latest Draft (ECMA-262)<br><small lang="fr">La définition de 'Math.random' dans cette spécification.</small></a></td>
+   <td><span class="spec-Draft">Projet</span></td>
+   <td>&nbsp;</td>
+  </tr>
+ </tbody>
+</table>
+
+<h2 id="Compatibilité_des_navigateurs">Compatibilité des navigateurs</h2>
+
+<p class="hidden">Le tableau de compatibilité de cette page a été généré à partir de données structurées. Si vous souhaitez contribuer à ces données, n'hésitez pas à envoyer une <em>pull request</em> sur <a href="https://github.com/mdn/browser-compat-data" class="external external-icon" rel="noopener">https://github.com/mdn/browser-compat-data</a>.</p>
+
+<p></p><div class="bc-old hidden"><div class="htab">
+    <a id="AutoCompatibilityTable" name="AutoCompatibilityTable"></a>
+    <ul>
+    <li class="selected">
+    <a>Desktop</a>
+    </li>
+    <li>
+    <a>Mobile</a>
+    </li>
+    </ul>
+    <div id="compat-desktop" style="display: block;"><table class="compat-table"><thead><tr><th>Fonctionnalité</th><th>Chrome</th><th>Edge</th><th>Firefox</th><th>Internet Explorer</th><th>Opera</th><th>Safari</th></tr></thead><tbody><tr><td><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Support simple</a></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support">1</td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td></tr></tbody></table></div><div id="compat-mobile" style="display: none;"><table class="compat-table"><thead><tr><th>Fonctionnalité</th><th>Android webview</th><th>Chrome for Android</th><th>Edge mobile</th><th>Firefox for Android</th><th>Opera Android</th><th>iOS Safari</th><th>Samsung Internet</th></tr></thead><tbody><tr><td><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Support simple</a></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support">4</td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td><td class="full-support"><span title="Veuillez mettre à jour avec la version minimale du support">
+      Oui</span></td></tr></tbody></table></div></div></div><div class="bc-data"><div class="bc-beta-menu"><a href="https://developer.mozilla.org/docs/New_Compatibility_Tables_Beta">Les nouveaux tableaux de compatibilité sont disponibles en beta <i class="icon-caret-down" aria-hidden="true"></i></a><ul class="submenu js-submenu"><li><a href="https://developer.mozilla.org/docs/New_Compatibility_Tables_Beta">En savoir plus sur la beta.</a></li><li><a href="https://www.surveygizmo.com/s3/2342437/0b5ff6b6b8f6" class="external external-icon">Répondre au sondage</a></li><li><button class="button bc-error">Rapporter une erreur.</button></li><li><button class="button bc-old">Afficher l'ancien tableau.</button></li></ul></div><table class="bc-table bc-table-js"><thead><tr class="bc-platforms"><td></td><th colspan="6" class="bc-platform-desktop"><abbr class="only-icon" title="Ordinateur"><span>Ordinateur</span><i class="ic-desktop"></i></abbr></th><th colspan="7" class="bc-platform-mobile"><abbr class="only-icon" title="Mobile"><span>Mobile</span><i class="ic-mobile"></i></abbr></th><th colspan="1" class="bc-platform-server"><abbr class="only-icon" title="Serveur"><span>Serveur</span><i class="ic-server"></i></abbr></th></tr><tr class="bc-browsers"><td></td><th class="bc-browser-chrome"><abbr class="only-icon" title="Chrome"><span>Chrome</span><i class="ic-chrome"></i></abbr></th><th class="bc-browser-edge"><abbr class="only-icon" title="Edge"><span>Edge</span><i class="ic-edge"></i></abbr></th><th class="bc-browser-firefox"><abbr class="only-icon" title="Firefox"><span>Firefox</span><i class="ic-firefox"></i></abbr></th><th class="bc-browser-ie"><abbr class="only-icon" title="Internet Explorer"><span>Internet Explorer</span><i class="ic-ie"></i></abbr></th><th class="bc-browser-opera"><abbr class="only-icon" title="Opera"><span>Opera</span><i class="ic-opera"></i></abbr></th><th class="bc-browser-safari"><abbr class="only-icon" title="Safari"><span>Safari</span><i class="ic-safari"></i></abbr></th><th class="bc-browser-webview_android"><abbr class="only-icon" title="Webview Android"><span>Webview Android</span><i class="ic-webview_android"></i></abbr></th><th class="bc-browser-chrome_android"><abbr class="only-icon" title="Chrome pour Android"><span>Chrome pour Android</span><i class="ic-chrome_android"></i></abbr></th><th class="bc-browser-edge_mobile"><abbr class="only-icon" title="Edge Mobile"><span>Edge Mobile</span><i class="ic-edge_mobile"></i></abbr></th><th class="bc-browser-firefox_android"><abbr class="only-icon" title="Firefox pour Android"><span>Firefox pour Android</span><i class="ic-firefox_android"></i></abbr></th><th class="bc-browser-opera_android"><abbr class="only-icon" title="Opera pour Android"><span>Opera pour Android</span><i class="ic-opera_android"></i></abbr></th><th class="bc-browser-safari_ios"><abbr class="only-icon" title="Safari pour iOS"><span>Safari pour iOS</span><i class="ic-safari_ios"></i></abbr></th><th class="bc-browser-samsunginternet_android"><abbr class="only-icon" title="Samsung Internet"><span>Samsung Internet</span><i class="ic-samsunginternet_android"></i></abbr></th><th class="bc-browser-nodejs"><abbr class="only-icon" title="Node.js"><span>Node.js</span><i class="ic-nodejs"></i></abbr></th></tr></thead><tbody><tr><th scope="row"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Support simple</a></th><td class="bc-supports-yes bc-browser-chrome"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-edge"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-firefox"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              1</td><td class="bc-supports-yes bc-browser-ie"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-opera"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-safari"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-webview_android"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-chrome_android"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-edge_mobile"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-firefox_android"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              4</td><td class="bc-supports-yes bc-browser-opera_android"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-safari_ios"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-samsunginternet_android"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td><td class="bc-supports-yes bc-browser-nodejs"><abbr class="bc-level-yes only-icon" title="Support complet">
+                <span>Support complet</span>
+              </abbr>
+              Oui</td></tr></tbody></table><section id="sect1" class="bc-legend"><h3 id="Légende" class="offscreen highlight-spanned"><span class="highlight-span">Légende</span></h3><dl><dt><span class="bc-supports-yes bc-supports">
+                <abbr class="bc-level bc-level-yes only-icon" title="Support complet">
+                 <span>Support complet</span>
+                 &nbsp;
+                </abbr></span></dt><dd>Support complet</dd></dl></section></div><p></p>
+                  
+                
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Étiquettes et contributeurs liés au document</h2>
+                
+                
+  <div class="tag-attach-list contributors-sub">
+    <svg class="icon icon-tags" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M7 7c0-1.109-.891-2-2-2s-2 .891-2 2 .891 2 2 2 2-.891 2-2zm16.672 9c0 .531-.219 1.047-.578 1.406l-7.672 7.688c-.375.359-.891.578-1.422.578s-1.047-.219-1.406-.578L1.422 13.906C.625 13.125 0 11.609 0 10.5V4c0-1.094.906-2 2-2h6.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422zm6 0c0 .531-.219 1.047-.578 1.406l-7.672 7.688a2.08 2.08 0 0 1-1.422.578c-.812 0-1.219-.375-1.75-.922l7.344-7.344c.359-.359.578-.875.578-1.406s-.219-1.047-.578-1.422L14.422 3.422C13.625 2.625 12.11 2 11 2h3.5c1.109 0 2.625.625 3.422 1.422l11.172 11.156c.359.375.578.891.578 1.422z"></path>
+</svg>
+    <strong>Étiquettes :</strong>&nbsp;
+    <ul class="tags tags-small">
+      
+        <li><a href="https://developer.mozilla.org/fr/docs/tag/JavaScript" rel="nofollow">JavaScript</a></li>
+      
+        <li><a href="https://developer.mozilla.org/fr/docs/tag/Math" rel="nofollow">Math</a></li>
+      
+        <li><a href="https://developer.mozilla.org/fr/docs/tag/M%C3%A9thode" rel="nofollow">Méthode</a></li>
+      
+        <li><a href="https://developer.mozilla.org/fr/docs/tag/Reference" rel="nofollow">Reference</a></li>
+      
+    </ul>
+  </div>
+
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-group" xmlns="http://www.w3.org/2000/svg" width="30" height="28" viewBox="0 0 30 28" aria-hidden="true">
+    <path d="M9.266 14a5.532 5.532 0 0 0-4.141 2H3.031C1.468 16 0 15.25 0 13.516 0 12.25-.047 8 1.937 8c.328 0 1.953 1.328 4.062 1.328.719 0 1.406-.125 2.078-.359A7.624 7.624 0 0 0 7.999 10c0 1.422.453 2.828 1.266 4zM26 23.953C26 26.484 24.328 28 21.828 28H8.172C5.672 28 4 26.484 4 23.953 4 20.422 4.828 15 9.406 15c.531 0 2.469 2.172 5.594 2.172S20.063 15 20.594 15C25.172 15 26 20.422 26 23.953zM10 4c0 2.203-1.797 4-4 4S2 6.203 2 4s1.797-4 4-4 4 1.797 4 4zm11 6c0 3.313-2.688 6-6 6s-6-2.688-6-6 2.688-6 6-6 6 2.688 6 6zm9 3.516C30 15.25 28.531 16 26.969 16h-2.094a5.532 5.532 0 0 0-4.141-2A7.066 7.066 0 0 0 22 10a7.6 7.6 0 0 0-.078-1.031A6.258 6.258 0 0 0 24 9.328C26.109 9.328 27.734 8 28.062 8c1.984 0 1.937 4.25 1.937 5.516zM28 4c0 2.203-1.797 4-4 4s-4-1.797-4-4 1.797-4 4-4 4 1.797 4 4z"></path>
+</svg>
+                    <strong>Contributeurs à cette page&nbsp;:</strong>
+                    
+        <a href="https://developer.mozilla.org/fr/profiles/SphinxKnight">SphinxKnight</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/romain.bohdanowicz">romain.bohdanowicz</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/BNedry">BNedry</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/teoli">teoli</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/Jeremie">Jeremie</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/Mgjbot">Mgjbot</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/Kyodev">Kyodev</a>, 
+    
+        <a href="https://developer.mozilla.org/fr/profiles/Gorrk">Gorrk</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <svg class="icon icon-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-hidden="true">
+    <path d="M14 8.5v7c0 .281-.219.5-.5.5h-5a.494.494 0 0 1-.5-.5v-1c0-.281.219-.5.5-.5H12V8.5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zm6.5 5.5c0-4.688-3.813-8.5-8.5-8.5S3.5 9.313 3.5 14s3.813 8.5 8.5 8.5 8.5-3.813 8.5-8.5zm3.5 0c0 6.625-5.375 12-12 12S0 20.625 0 14 5.375 2 12 2s12 5.375 12 12z"></path>
+</svg>
+                    <strong>Dernière mise à jour par :</strong>
+                    <a href="https://developer.mozilla.org/fr/profiles/SphinxKnight">SphinxKnight</a>,
+                    <time datetime="2018-05-16T04:05:38.235096-07:00">16 mai 2018 à 04:05:38</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                
+                  <!-- crumbs -->
+                  
+  
+    <nav class="crumbs" role="navigation">
+      <ol typeof="BreadcrumbList" vocab="https://schema.org/" aria-label="fils d&#39;ariane">
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/fr/docs/Web" property="item" typeof="WebPage">
+              <span property="name">Technologies web pour développeurs</span>
+            </a>
+            <meta property="position" content="1">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" property="item" typeof="WebPage">
+              <span property="name">Java<wbr>Script</span>
+            </a>
+            <meta property="position" content="2">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference" property="item" typeof="WebPage">
+              <span property="name">Référence Java<wbr>Script</span>
+            </a>
+            <meta property="position" content="3">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux" property="item" typeof="WebPage">
+              <span property="name">Objets globaux</span>
+            </a>
+            <meta property="position" content="4">
+          </li>
+        
+          <li property="itemListElement" typeof="ListItem" class="crumb">
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math" property="item" typeof="WebPage">
+              <span property="name">Math</span>
+            </a>
+            <meta property="position" content="5">
+          </li>
+        
+        <li property="itemListElement" typeof="ListItem" class="crumb">
+          <span property="name">Math<wbr>.random()</span>
+        </li>
+      </ol>
+    </nav>
+  
+                
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="quick-links-head">Sujets associés</div>
+    <ol><li><strong><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux">Objets standards</a></strong></li><li><strong><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math"><code>Math</code></a></strong></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Propriétés</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/E" title="La propriété Math.E représente la base du logarithme naturel, e, et vaut environ 2.718."><code>Math.E</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/LN10" title="La propriété Math.LN10 représente la valeur du logarithme naturel de 10, environ 2.302 :"><code>Math.LN10</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/LN2" title="La propriété Math.LN2 représente le logarithme naturel de 2, environ 0.693:"><code>Math.LN2</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/LOG10E" title="La propriété Math.LOG10E fournit la valeur du logarithme en base 10 de e, environ 0.434 :"><code>Math<wbr>.LOG10E</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/LOG2E" title="La propriété Math.LOG2E représente la valeur du logarithme en base 2 de e, environ 1.442 :"><code>Math<wbr>.LOG2E</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/PI" title="La propriété Math.PI représente le ratio entre le périmètre d&#39;un cercle et son diamètre. Elle vaut environ 3.14159:"><code>Math.PI</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/SQRT1_2" title="La propriété Math.SQRT1_2 représente la racine carrée d&#39;1/2 et vaut environ 0.707 :"><code>Math<wbr>.SQRT1_2</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/SQRT2" title="La propriété Math.SQRT2 représente la racine carrée de 2 et vaut environ 1.414 :"><code>Math<wbr>.SQRT2</code></a></li></ol></li><li data-default-state="open" class="toggleable current" data-closed=""><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-down"></i><strong>Méthodes</strong></a><ol class="toggle-container" aria-expanded="true" style="display: block;"><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/abs" title="La fonction Math.abs() retourne la valeur absolue d&#39;un nombre, c&#39;est-à-dire"><code>Math<wbr>.abs()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/acos" title="La fonction Math.acos() renvoie l&#39;arc cosinus d&#39;une valeur exprimée en radians. Cela est défini par :"><code>Math<wbr>.acos()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/acosh" title="La fonction Math.acosh() renvoie l&#39;arc cosinus hyperbolique d&#39;un nombre.Elle est définie par :"><code>Math<wbr>.acosh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/asin" title="La fonction Math.asin() renvoie l&#39;arc sinus d&#39;un nombre (en radians). Elle est définie par :"><code>Math<wbr>.asin()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/asinh" title="La fonction Math.asinh() renvoie l&#39;arc sinus hyperbolique d&#39;un nombre :"><code>Math<wbr>.asinh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/atan" title="La fonction Math.atan() renvoie l&#39;arc tangente d&#39;un nombre exprimée en radians. Elle est définie par :"><code>Math<wbr>.atan()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/atan2" title="La fonction Math.atan2() renvoie l&#39;arc tangente du quotient de ses arguments."><code>Math<wbr>.atan2()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/atanh" title="La fonction Math.atanh() renvoie l&#39;arc tangente hyperbolique d&#39;un nombre :"><code>Math<wbr>.atanh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/cbrt" title="La fonction Math.cbrt() renvoie la racine cubique (le nom anglais étant cubic root) d&#39;un nombre :"><code>Math<wbr>.cbrt()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/ceil" title="La fonction Math.ceil() retourne le plus petit entier supérieur ou égal au nombre donné."><code>Math<wbr>.ceil()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/clz32" title="La fonction Math.clz32() renvoie le nombre de zéros de tête dans la représentation binaire sur 32 bits d&#39;un nombre."><code>Math<wbr>.clz32()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/cos" title="La fonction Math.cos() retourne le cosinus d&#39;un angle dont la valeur est exprimée en radians."><code>Math<wbr>.cos()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/cosh" title="La fonction Math.cosh() renvoie le cosinus hyperbolique d&#39;un nombre, défini par :"><code>Math<wbr>.cosh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/exp" title="La fonction Math.exp() renvoie l&#39;exponentielle d&#39;un nombre (donnée par ex, où x est la valeur passée en argument et e la valeur du nombre d&#39;Euler (parfois appelé constante de Napier)."><code>Math<wbr>.exp()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/expm1" title="La fonction Math.expm1() renvoie ex - 1, avec x l&#39;argument donné et e la base du logarithme nepérien."><code>Math<wbr>.expm1()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/floor" title="La fonction Math.floor(x) renvoie le plus grand entier qui est inférieur ou égal à un nombre x."><code>Math<wbr>.floor()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/fround" title="La fonction Math.fround() renvoie le nombre flottant à précision simple sur 32 bits qui est le plus proche du nombre fourni."><code>Math<wbr>.fround()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/hypot" title="La fonction Math.hypot() renvoie la racine carrée de la somme des carrés de ses arguments. On peut également la définir avec la formule suivante :"><code>Math<wbr>.hypot()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/imul" title="La fonction Math.imul() renvoie le résultat de la multiplication de deux nombres, calculée avec la représentation sur 32 bits de ces nombres, à la façon du langage C."><code>Math<wbr>.imul()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/log" title="La fonction Math.log() renvoie le logarithme naturel (aussi appelé logarithme népérien) d&#39;un nombre, défini par :"><code>Math<wbr>.log()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/log10" title="La fonction Math.log10() renvoie le logarithme en base 10 d&#39;un nombre, donné par la formule :"><code>Math<wbr>.log10()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/log1p" title="La fonction Math.log1p() renvoie le logarithme népérien (en base e) d&#39;un nombre +1, donné par la formule :"><code>Math<wbr>.log1p()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/log2" title="La fonction Math.log2() renvoie le logarithme en base 2 d&#39;un nombre :"><code>Math<wbr>.log2()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/max" title="La fonction Math.max() renvoie le plus grand nombre d&#39;une série de 0 ou plusieurs nombres."><code>Math<wbr>.max()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/min" title="La fonction Math.min() renvoie le plus petit nombre d&#39;une série de 0 ou plusieurs nombres ou bien NaN si au moins un des arguments fourni n&#39;est pas un nombre ou ne peut pas être converti en nombre."><code>Math<wbr>.min()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/pow" title="La fonction Math.pow() renvoie un nombre à une certaine puissance, c&#39;est-à-dire baseexposant."><code>Math<wbr>.pow()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random" title="La fonction Math.random() renvoie un nombre flottant pseudo-aléatoire compris dans l&#39;intervalle [0, 1[ (ce qui signifie que 0 est compris dans l&#39;intervalle mais que 1 en est exclu). Ce nombre peut ensuite être multiplié afin de couvrir un autre intervalle. La graine (seed) du générateur est choisie par l&#39;algorithme et ne peut pas être choisie ou réinitialisée par l&#39;utilisateur."><code>Math<wbr>.random()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/round" title="La fonction Math.round() retourne la valeur d&#39;un nombre arrondi à l&#39;entier le plus proche."><code>Math<wbr>.round()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sign" title="La fonction Math.sign() renvoie le signe d&#39;un nombre et permet de savoir si un nombre est positif, négatif ou nul."><code>Math<wbr>.sign()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sin" title="La fonction Math.sin() renvoie le sinus d&#39;un nombre."><code>Math<wbr>.sin()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sinh" title="La fonction Math.sinh() renvoie le sinus hyperbolique d&#39;un nombre, dont la formule, utilisant la constante e, est :"><code>Math<wbr>.sinh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/sqrt" title="La fonction Math.sqrt() renvoie la racine carrée d&#39;un nombre. Cette fonction est définie par :"><code>Math<wbr>.sqrt()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/tan" title="La fonction Math.tan() renvoie la tangente d&#39;un nombre exprimant un angle en radians."><code>Math<wbr>.tan()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/tanh" title="La fonction Math.tanh() renvoie la tangente hyperbolique d&#39;un nombre définie par :"><code>Math<wbr>.tanh()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/trunc" title="La fonction Math.trunc() retourne la partie entière d&#39;un nombre en retirant la partie décimale."><code>Math<wbr>.trunc()</code></a></li></ol></li><li><strong>Héritage&nbsp;:</strong></li><li><strong><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object"><code>Object</code></a></strong></li><li class="toggleable" data-closed="true"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-right"></i><strong>Propriétés</strong></a><ol class="toggle-container" style="display: none;"><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/count" title="La propriété __count__ était utilisée pour compter les propriétés énumérables d&#39;un objet mais a été retiréee."><code>Object<wbr>.prototype.__count__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/noSuchMethod" title="La propriété __noSuchMethod__ était utilisée pour faire référence à une fonction qui devait être utilisée lorsqu&#39;on appelait une méthode inexistante d&#39;un objet. Cette fonction n&#39;est plus disponible."><code>Object<wbr>.prototype.__noSuch<wbr>Method__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/Parent" title="La propriété __parent__ était utilisée pour pointer vers le contexte d&#39;un objet mais elle a été supprimée."><code>Object<wbr>.prototype.__parent__</code></a></s></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/proto" title="La propriété __proto__ de Object.prototype est une propriété accesseur (un couple de fonction avec un accesseur (getter) et un mutateur (setter)) qui expose le [[Prototype]] interne (qui est soit un objet, soit null) de l&#39;objet courant."><code>Object<wbr>.prototype.__proto__</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/constructor" title="Cette propriété renvoie une référence à la fonction Object qui a créé le prototype de l&#39;instance. La valeur de cette propriété est une référence à la fonction elle-même, ce n&#39;est pas une chaîne de caractères représentant le nom de la fonction. Cette valeur est en lecture seule pour les valeurs de types primitifs comme 1, true et &quot;test&quot;."><code>Object<wbr>.prototype<wbr>.constructor</code></a></li></ol></li><li class="toggleable" data-closed="true"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random#" class="toggler" aria-haspopup="true"><i aria-hidden="true" class="icon-caret-right"></i><strong>Méthodes</strong></a><ol class="toggle-container" style="display: none;"><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineGetter" title="La méthode __defineGetter__ permet de lier une propriété d&#39;un objet à une fonction à exécuter lorsqu&#39;on accède à la propriété."><code>Object<wbr>.prototype.__define<wbr>Getter__()</code></a></li><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/defineSetter" title="La méthode __defineSetter__ permet de lier une propriété d&#39;un objet à une fonction qui sera exécutée pour toute tentative de définition/changement de cette propriété."><code>Object<wbr>.prototype.__define<wbr>Setter__()</code></a></li><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/lookupGetter" title="La méthode __lookupGetter__ renvoie la fonction liée comme accesseur d&#39;une propriété donnée."><code>Object<wbr>.prototype.__lookup<wbr>Getter__()</code></a></li><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/lookupSetter" title="La méthode __lookupSetter__ renvoie la fonction définie comme mutateur pour une propriété donnée."><code>Object<wbr>.prototype.__lookup<wbr>Setter__()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/hasOwnProperty" title="La méthode hasOwnProperty() retourne un booléen indiquant si l&#39;objet possède la propriété spécifiée &quot;en propre&quot;, sans que celle-ci provienne de la chaîne de prototypes de l&#39;objet."><code>Object<wbr>.prototype<wbr>.has<wbr>OwnProperty()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/isPrototypeOf" title="La méthode isPrototypeOf() permet de tester si un objet existe dans la chaîne de prototypes d&#39;un autre objet."><code>Object<wbr>.prototype<wbr>.isPrototypeOf()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/propertyIsEnumerable" title="La méthode propertyIsEnumerable() renvoie un booléen qui indique si la propriété donnée est énumérable."><code>Object<wbr>.prototype<wbr>.property<wbr>IsEnumerable()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/toLocaleString" title="La méthode toLocaleString() renvoie une chaine de caractères représentant l&#39;objet. Cette méthode est destinée à être surchargée par les objets dérivés à des fins spécifiques pour prendre en compte les locales."><code>Object<wbr>.prototype<wbr>.toLocale<wbr>String()</code></a></li><li><span class="sidebar-icon"><span title="Cette API n&#39;a pas été standardisée."><i class="icon-warning-sign"> </i></span></span><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/toSource" title="La méthode toSource() renvoie une chaîne de caractères représentant le code source d&#39;un objet."><code>Object<wbr>.prototype<wbr>.toSource()</code></a></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/toString" title="La méthode toString() renvoie une chaîne de caractères représentant l&#39;objet."><code>Object<wbr>.prototype<wbr>.toString()</code></a></li><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/unwatch" title="La méthode unwatch() permet de retirer un point d&#39;arrêt conditionnel créé par la méthode watch()."><code>Object<wbr>.prototype<wbr>.unwatch()</code></a></s></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/valueOf" title="La méthode valueOf() renvoie la valeur primitive d&#39;un objet donné."><code>Object<wbr>.prototype<wbr>.valueOf()</code></a></li><li><span class="sidebar-icon"><span title="Cette API obsolète ne doit plus être utilisée, mais elle peut continuer à fonctionner."><i class="icon-thumbs-down-alt"> </i></span></span><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/watch" title="La méthode watch() permet d&#39;appeler une fonction lorsqu&#39;une propriété est affectée."><code>Object<wbr>.prototype<wbr>.watch()</code></a></s></li><li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/setPrototypeOf" title="La méthode Object.setPrototypeOf() définit le prototype (autrement dit la propriété interne [[Prototype]]) d&#39;un objet donné avec un autre objet ou null."><code>Object<wbr>.set<wbr>PrototypeOf()</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+        <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Recevez le meilleur du développement web</h2>
+            <p class="newsletter-description">Recevez le meilleur de MDN, directement dans votre boîte de réception.</p>
+            
+            <p class="newsletter-lang">Cette lettre d'information est uniquement disponible en anglais pour l'instant.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev">
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">Adresse électronique</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required="" placeholder="adresse@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required="">
+                <label for="newsletterPrivacyInput">
+                J’accepte que Mozilla utilise mes informations conformément à cette <a href="https://www.mozilla.org/privacy/">politique de confidentialité</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">
+                    S'inscrire maintenant<svg class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg" width="23" height="28" viewBox="0 0 23 28" aria-hidden="true">
+    <path d="M23 15a2.01 2.01 0 0 1-.578 1.422L12.25 26.594c-.375.359-.891.578-1.422.578s-1.031-.219-1.406-.578L8.25 25.422c-.375-.375-.594-.891-.594-1.422s.219-1.047.594-1.422L12.828 18h-11C.703 18 0 17.062 0 16v-2c0-1.062.703-2 1.828-2h11L8.25 7.406a1.96 1.96 0 0 1 0-2.812l1.172-1.172c.375-.375.875-.594 1.406-.594s1.047.219 1.422.594l10.172 10.172c.375.359.578.875.578 1.406z"></path>
+</svg>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>Merci&nbsp;! Veuillez vérifier votre boîte de réception afin de confirmer votre inscription.</h2>
+        <p>Si vous n'avez pas déjà confirmé d'inscription à une lettre d'information Mozilla, vous devrez valider cette inscription. Veuillez vérifier votre boîte de réception, éventuellement vos messages indésirables, pour consulter le message que nous vous avons envoyé.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide">
+        <span>Masquer l'inscription à la lettre d'information</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true">
+    <path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"></path>
+</svg>
+    </button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random$edit" label="Modifier la page"></menuitem>
+    <menuitem data-action="/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random$history" label="Voir l&#39;historique de la page"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="https://developer.mozilla.org/fr/" class="nav-footer-logo">Documentation du Web - MDN</a>
+<div class="footer-group footer-group-mdn">
+  <h2 class="footer-title">MDN</h2>
+  <ul class="footer-list">
+    <li><a href="https://developer.mozilla.org/fr/docs/Web">Technologies web</a></li>
+    <li><a href="https://developer.mozilla.org/fr/docs/Learn">Apprendre le développement web</a></li>
+    <li><a href="https://developer.mozilla.org/docs/MDN/About">À propos de MDN</a></li>
+    <li><a href="https://developer.mozilla.org/fr/docs/MDN/Feedback">Votre avis</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozdevnet">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://github.com/mdn/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-github" width="24" height="28" viewBox="0 0 24 28">
+    <title>GitHub</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          <a href="https://mozilla.org/" class="nav-footer-mozilla">Mozilla</a>
+<div class="footer-group footer-group-mozilla">
+  <h2 class="footer-title">Mozilla</h2>
+  <ul class="footer-list">
+    <li><a href="https://www.mozilla.org/about/">À propos</a></li>
+    <li><a href="https://www.mozilla.org/contact/">Nous contacter</a></li>
+    <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&amp;utm_campaign=footer&amp;utm_medium=referral">Firefox</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.facebook.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-facebook" width="16" height="28" viewBox="0 0 16 28">
+    <title>Facebook</title>
+    <path d="M14.984.187v4.125h-2.453c-1.922 0-2.281.922-2.281 2.25v2.953h4.578l-.609 4.625H10.25v11.859H5.469V14.14H1.485V9.515h3.984V6.109C5.469 2.156 7.891 0 11.422 0c1.687 0 3.141.125 3.563.187z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.instagram.com/mozillagram/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-instagram" width="24" height="28" viewBox="0 0 24 28">
+    <title>Instagram</title>
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm2.156 0c0 3.406-2.75 6.156-6.156 6.156S5.844 17.406 5.844 14 8.594 7.844 12 7.844s6.156 2.75 6.156 6.156zm1.688-6.406c0 .797-.641 1.437-1.437 1.437S16.97 8.39 16.97 7.594s.641-1.437 1.437-1.437 1.437.641 1.437 1.437zM12 4.156c-1.75 0-5.5-.141-7.078.484-.547.219-.953.484-1.375.906s-.688.828-.906 1.375c-.625 1.578-.484 5.328-.484 7.078s-.141 5.5.484 7.078c.219.547.484.953.906 1.375s.828.688 1.375.906c1.578.625 5.328.484 7.078.484s5.5.141 7.078-.484c.547-.219.953-.484 1.375-.906s.688-.828.906-1.375c.625-1.578.484-5.328.484-7.078s.141-5.5-.484-7.078c-.219-.547-.484-.953-.906-1.375s-.828-.688-1.375-.906C17.5 4.015 13.75 4.156 12 4.156zM24 14c0 1.656.016 3.297-.078 4.953-.094 1.922-.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656.094-3.297.078-4.953.078s-3.297.016-4.953-.078c-1.922-.094-3.625-.531-5.031-1.937S.173 20.875.08 18.953C-.014 17.297.002 15.656.002 14s-.016-3.297.078-4.953c.094-1.922.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-.094 3.297-.078 4.953-.078s3.297-.016 4.953.078c1.922.094 3.625.531 5.031 1.937s1.844 3.109 1.937 5.031C24.016 10.703 24 12.344 24 14z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          
+  
+    <form class="languages go" method="get" action="https://developer.mozilla.org/fr/docs/Web">
+      <label for="language">Autres langues&nbsp;:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="Français" data-locale="fr" value="/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random" selected="">
+          Français (fr)
+        </option>
+        
+          <option title="Anglais américain" data-locale="fr" value="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            English (US) (en-US)
+          </option>
+          <option title="Catalan" data-locale="fr" value="/ca/docs/Web/JavaScript/Referencia/Objectes_globals/Math/random">
+            Català (ca)
+          </option>
+          <option title="Allemand" data-locale="fr" value="/de/docs/Web/JavaScript/Reference/Global_Objects/Math/math.random">
+            Deutsch (de)
+          </option>
+          <option title="Espagnol" data-locale="fr" value="/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random">
+            Español (es)
+          </option>
+          <option title="Italien" data-locale="fr" value="/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            Italiano (it)
+          </option>
+          <option title="Japonais" data-locale="fr" value="/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            日本語 (ja)
+          </option>
+          <option title="Coréen" data-locale="fr" value="/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            한국어 (ko)
+          </option>
+          <option title="Polonais" data-locale="fr" value="/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random">
+            Polski (pl)
+          </option>
+          <option title="Portugais brésilien" data-locale="fr" value="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            Português (do&nbsp;Brasil) (pt-BR)
+          </option>
+          <option title="Russe" data-locale="fr" value="/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            Русский (ru)
+          </option>
+          <option title="Ukrainien" data-locale="fr" value="/uk/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            Українська (uk)
+          </option>
+          <option title="Chinois (simplifié)" data-locale="fr" value="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random">
+            中文 (简体) (zh-CN)
+          </option>
+      </select>
+      <noscript><button type="submit">OK</button></noscript>
+    </form>
+  
+
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Conditions d'utilisation</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Confidentialité</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div id="license" class="contentinfo">
+              <p>© 2005-2018 Mozilla et contributeurs individuels.</p> <p>Tous les contenus sont disponibles sous <a href="https://developer.mozilla.org/en-US/docs/MDN/About#Copyrights_and_licenses">ces licences</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.mozilla.org/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script src="./Math.random() - JavaScript _ MDN_files/javascript.4ea533095ac7.js"></script>
+    <script type="text/javascript" src="./Math.random() - JavaScript _ MDN_files/main.9d7a43a3c387.js" charset="utf-8"></script>
+    <script>
+    if (window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+</script>
+    
+
+  
+
+    <script async="" type="text/javascript" src="./Math.random() - JavaScript _ MDN_files/wiki.85628393fab7.js" charset="utf-8"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+    <script async="" type="text/javascript" src="./Math.random() - JavaScript _ MDN_files/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+
+</body></html>

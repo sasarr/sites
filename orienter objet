@@ -1,0 +1,306 @@
+//singleton: objet litteral dont on ne peut avoir qu une seule instance en mémoire.
+//prototype model d'objet dans la mémoire
+
+var litteralObjet = {
+	toto: 'toto',
+	tata: 15,
+
+	run: function()
+	{
+	console.log("je run");
+	}
+}
+
+
+fuction Article()
+{
+	this.name= "toto";
+	this.price = 35.32;
+
+	this.buy = function()
+	{
+			conle.log("vous venez d'acheter" + this.name);
+	}
+//ou
+	Article.prototype.buy = fonction (){
+		conle.log("vous venez d'acheter" + this.name);
+	}
+	}
+}
+
+var article = new Article();
+
+var articles = [];
+
+for(var i = 0; i < 1500; i++){
+	articles.push(new Article());
+}
+
+
+//autre exemple
+function Computer(screenSize, language, webcam, operatingSystem)
+{
+	this.screenSize = screenSize;
+	this.language = language;
+	this.webcam = webcam;
+	this.operatingSystem = operatingSystem;
+}
+
+Computer.prototype.start = function()
+{
+	console.log("je m'allume");
+}
+
+Computer.prototype.shutdown = function()
+{
+	console.log("je m'etteind");
+}
+
+Computer.prototype.restart = function()
+{
+	this.shutdown();
+	this.start();
+}
+
+var monOrdi = new Computer(99, "francais", true, "mac");
+var sonOrdi  = new Computer(100, "anglais", false, "windows");
+
+///dragon slayers 
+
+
+function Game()
+{
+    this.players = [];
+}
+
+Game.prototype.Initialize = function()
+{
+    this.players.push( new Fighter("Knight", 1) );
+    this.players.push( new Fighter("Dragon", 0) );
+}
+
+Game.prototype.Run = function()
+{
+    while(this.players[0].life > 0 && this.players[1].life > 0)
+    {
+        Math.random() > 0.5 ? this.players[0].Attack() : this.players[1].Attack();
+    }
+}
+
+function Fighter( type, target )
+{
+    this.type = type;
+    this.life = Math.random() * 100 |0;
+
+    this.weapon = new Equipment("Weapon", Math.random() * 10 |0);
+    this.armor = new Equipment("Armor", Math.random() * -10 |0  );
+
+    this.target = target;
+}
+
+Fighter.prototype.Attack = function()
+{
+    game.players[this.target].life -= this.weapon.effect - game.players[this.target].armor.effect;
+
+    console.log("le fighter: " + this.type + " attaque le fighter: " + game.players[this.target].type + " il lui met: " + (this.weapon.effect - game.players[this.target].armor.effect) + " dans la gueule et il reste a " + game.players[this.target].type + ": " + game.players[this.target].life + " points de vie" );
+    console.log("------------------------------------------------------------------------------");
+}
+
+function Equipment( name, effect )
+{
+    this.name = name;
+    this.effect = effect; // + 2 ||e- 5 
+}
+
+var game = new Game();
+game.Initialize();
+game.Run();
+
+
+
+//cours--------------------------------------------------------------------//
+//-------------------------------------------------------------------------
+
+var array = []; // ceci est un array
+
+var associatifArray = {} // ceci est un array associatif 
+
+// mais ... 
+
+var associatifArray = {} // ceci est egalement un "OBJET LITTERAL"
+
+// dans un objet, on va pouvoir attacher des proprie 
+//( connu jusqu'a present sous le nom de variables) 
+
+// &
+
+// des methodes ( connu jusqu'a present sous le nom de fonction )
+
+//-------------------------------------------------------------------
+
+var associatifObject = 
+{
+	exempleOfProperty: 141414,
+
+	ExempleOfMethod: function()
+	{
+		console.log("oh une methode d'objet litteral");
+	}
+};
+
+// Dans cette declaration d'objet litteral il va falloir 
+// qu'on utilise un "operateur d'accession" pour rentrer dans l'objet
+// ce machin c'est le point (.)
+// comme pour tout les objets que vous avez de manipuler, on utilise
+// un point pour aller a un niveau de profondeur ( penssez a console.log, 
+// console.clear, console.assert)
+// tout ca est regroupeutour d'une thetique, la console. 
+
+// ici notre exemple, on va utiliser le meme operateur pour rentrer dans l'objet
+// associatifObject.exempleOfProperty pour acceder a une proprie
+// associatifObject.ExempleOfMethod() pour acceder a une methode ( n'oubliez pas 
+// les parentheses pour les invoquer )
+
+// Cet objet litteral est de dans une variable, on ne va pas avoir a le cre 
+// cette syntaxe ( objet litteral ) est souvent utiliseour faire ce qu'on appelle
+// des singletons, des objets dont on ne peux autoriser qu'une seule copie ( ou instance )
+// pendant l'execution de votre programme / site web
+
+// il y a par contre un autre moyen de cre des objets, beaucoup plus adapteau instances 
+// multiples, il s'agit d'objets baseur des usines d'objets ( constructeurs ) 
+// en javascript on declare un constructeur avec le meme mot cleue celui des fonctions
+
+function MonConstructeurDobjet()
+{
+
+}
+
+// ET VOILA !! c'est aussi simple que ca :) 
+// pour cre une copie de cet objet il suffira juste de le stocker dans une variable et 
+// d'utiliser le mot magique de creion d'objet comme la ligne qui viens juste apres 
+// ces commentaires geniaux
+
+var monInstanceDobjet = new MonConstructeurDobjet();
+
+// ici dans "monInstanceDobjet" la variable, j'y retrouverai une instance ( copie ) base// sur l'usine ( constructeur ) MonConstruceurDobjet ... 
+
+// Mais cet objet est pour l'instant trop chiant, il va falloir y ajouter des truc pour qu'il
+// soit stylet puisse servir a quelque chose 
+
+// reprenons notre constructeur
+
+function MonConstructeurDobjet()
+{
+	var test = 1;
+	// si on declare une variable a l'interieur d'accolades 
+	// cette variable disparaitra une fois que l'on aura fini 
+	// l'execution du scope ( ce qu'il y a entre une accolade ouvrante et fermante )
+	// il faut que l'on "accroche la proprie e'objet"
+	// pour faire ca il suffit d'utiliser le mot clethis"
+
+	this.test = 1;
+
+	// this est un mot super important que vous retrouverez dans plein de language
+	// comme les fonctions boucles variable condition etc 
+
+	// this correspond au scope actuel 
+	// ici le scope c'est l'interieur de MonConstructeurDobjet
+	// donc c'est comme si on disait MonConstructeurDobjet.test 
+	// this peut importe ou vous l'utiliser prendra la valeur du scope actuel 
+
+}
+
+
+this // ce this par exemple correspond a l'exterieur, au scope global...
+
+// Mais Chef, on a vu pour les propries, mais comment on fait pour les methodes ? 
+// Exellente question etudiant imaginaire! c'est tresimple regarde: 
+
+function MonConstructeurDobjet()
+{
+	this.test = 1;
+
+	this.MaPremiereMethode = function()
+	{
+		console.log("c'est magique");
+	};
+}
+
+// Mais attention a cette solution de faciliteici quand on va cre notre objet
+// et meme tout les objets en reiteon va leur accrocher dans leur instance 
+// toutes les propries et toutes les methodes qu'on aura deare l'interieur
+// du constructeur,  !>MAIS<! on a une technique secrette pour eviter de dupliquer
+// trois cent milliards de fois des methodes dans chaque instance, il suffit de les
+// rajouter dans l'objet "invisible" qui lie toutes les instances d'un meme constructeur
+// ce truc s'appelle un prototype et ca s'utilise comme ca: 
+
+function MonConstructeurDobjet()
+{
+	this.test = 1;
+}
+
+MonConstructeurDobjet.prototype.MaPremiereMethode = function()
+{
+	console.log("c'est encore plus magique");
+}
+
+// Ici on va cre des objets vraiment tres leger, qui ne contiendront que les propries 
+// les informations qui sont unique finalement a chaque instance. 
+// mais les actions, leur methodes elles seront communes, ( toutes les voiture peuvent accellerer
+// et freiner par exemple ) donc innutile de le mettre partout dans chaque instance 
+
+// The End
+
+
+
+var array = []; // ceci est un array
+
+var associatifArray = {} // ceci est un array associatif 
+
+// mais ... 
+
+var associatifArray = {} // ceci est egalement un "OBJET LITTERAL"
+
+// dans un objet, on va pouvoir attacher des propri\Uffffffff 
+//( connu jusqu'a present sous le nom de variables) 
+
+// &
+
+// des methodes ( connu jusqu'a present sous le nom de fonction )
+
+//-------------------------------------------------------------------
+
+// So since ecmascript 2015 you have a new way to write the declaration of an object constructor
+
+class MyObjectConstructor 
+{
+
+}
+
+// this way you have no more confusion with the previously nomm\Uffffffffunction
+// profitons en pour parler egalement des methodes constructor sont appell\Uffffffff automatiquement
+// a la cr\Uffffffffion de l'objet donc au moment du new, pour la declarer 
+
+class MyObjectConstructor
+{
+	this.test;
+	this.toto;
+
+	constructor (value1, value2)
+	{
+		this.test = value1;
+		this.toto = value2;
+	}
+}
+
+// donc value1 et value2, seront des argument qu'il va falloir envoyer 
+// au constructeur pour qu'il puisse remplir a la construction, a la cr\Uffffffffion
+// les property de vos objets 
+
+var monTest = new MyObjectConstructor("maValeur1", 2);
+
+function MyOldMethod(value1, value2)
+{
+	this.test = value1;
+	this.toto = value2;
+}

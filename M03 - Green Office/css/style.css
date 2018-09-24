@@ -1,0 +1,94 @@
+body{
+	background-image: url(../img/fond.png);
+	margin:0;
+}
+
+header, main{
+	max-width: 750px;
+	margin: 0 auto;	
+
+}
+
+header{
+	background-color: #bbcb21;
+	overflow: hidden;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+header img{
+	float: left;
+}
+
+header nav{
+	float: right;
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	padding: 50px;
+}
+
+header nav a{
+	color:#2b4829; 
+	margin: 0 25px;
+}
+
+main{
+	background-color: white;
+	padding:25px;
+}
+
+h1, h2{
+	text-transform: uppercase;
+	font-family: 'Oswald', sans-serif;
+	color: #bbcb21;
+}
+
+h1{
+	margin-top: 0px;
+	padding-top: 50px;
+}
+article img{
+	float: left;
+	width: 250px;
+	margin-right:10px;
+	margin-bottom: 10px;
+}
+
+p{
+	font-family: arial;
+	color: #5f686d;
+}
+
+.clear{
+	clear: both;
+}
+
+.cadre{
+	text-align: right;
+}
+
+.bordure{
+	text-decoration: none;
+	font-family: arial;
+	color: white;
+	border-width:1px;
+	border-style:solid;
+	border-color:#bbcb21;
+	background-color:#bbcb21;
+	padding:15px;
+}
+
+ul{
+	font-family: arial;
+	color: #5f686d;
+}
+
+footer{
+	text-align: center;
+	font-size: 10px;
+	padding-top: 15px;
+}
+ footer img{
+ 	width: 50px;
+ }

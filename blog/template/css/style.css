@@ -1,0 +1,95 @@
+*{box-sizing: border-box;}
+
+body {
+background-color: #e1e1ff;
+font-family: 'Lobster Two', cursive;
+}
+
+.container{
+	padding: 20px 20px;	
+}
+
+h1{
+	color: #0092aa;
+	font-size: 1.5em;
+	margin: 0;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-family: 'Merienda', cursive;
+	text-align: center;
+}
+
+header{
+	background-color: #242455 ;
+	border-bottom: 6px solid #0092aa;
+	padding-bottom: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+header a {
+	color: #0092aa;
+	font-family: arial ;
+	display: block;
+	text-align: right;
+	text-decoration: none;
+}
+
+#home a{
+	text-decoration: none;
+	color:#0092aa;
+	font-family: arial;
+}
+
+#admin a {
+	text-decoration: none;
+	color:#0092aa;
+}
+
+#admin table
+{
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#admin h2 , #addpost h2, #addpost legend{
+	color: #0092aa;
+}
+
+#addpost fieldset, #showpost fieldset {
+	display: flex;
+	flex-direction: column;
+	padding-right: 50px;
+	padding-left: 50px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+
+}
+
+#showpost form{
+	margin-top: 50px
+}
+
+#addpost, #showpost form{
+	padding-right: 500px;
+	padding-left: 500px;
+}
+
+#addpost input,#addpost textarea,#addpost select, #showpost input, #showpost textarea{
+	margin-bottom: 20px;
+}
+
+#addpost div, #blocform{
+	text-align: center;
+}
+
+#nomcom{
+	color: #0092aa;
+	text-decoration: underline;
+}
+
+#bloccom{
+	display: inline-block;
+	padding-left: 100px;
+}
+

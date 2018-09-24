@@ -1,0 +1,30 @@
+body{
+	background-color: #dbffff;
+	padding: 30px 150px;
+}
+
+#contenu{
+	border: 1px solid #4992ff;
+	padding: 20px 50px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+}
+}
+
+
+fieldset{
+	display: flex;
+	flex-direction: column;
+}
+
+#bouton{
+	display: block;
+}
+
+legend{
+	color: #4992ff;
+}
+
+h1{
+	color: #db4955;
+}

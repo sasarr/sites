@@ -1,0 +1,52 @@
+<?php
+
+include("header.html");
+?>
+
+<main id="showpost" class="container">
+	<h2>Article</h2>
+	<section>
+
+	<?php foreach($allinfo as $var): ?>
+		<article>
+			<h3><?= $var['Titre']?></h3>
+			<p> <?= $var['Contenu']?></p>
+			<p>Rédigé par <?= $var['Nom'] ?> le <?= $var['Date'] ?></p>
+
+		</article>
+		<?php endforeach; ?>
+
+	</section>
+	
+	<hr>
+	<hr>
+
+	<div id="bloccom">
+	<?php foreach($infocom as $com): ?>
+		<p id="nomcom">Rédigé par <?= $com['Pseudo']?></p>
+		<p><?= $com['Contenu'] ?> </p>
+		<?php endforeach; ?>
+	</div id="blocfor">
+
+	<form method="post" >
+		<fieldset>
+			<legend>Nouveau commentaire</legend>
+
+			<label for="titre">Pseudo:</label>
+			<input type="text" name="titre">
+
+			<label for="article">Commentaire:</label>
+			<textarea name="article" id="article" rows="5" cols="50"></textarea>
+
+			<div>
+				<input type="submit" value="Enregistrer" />
+				<input type="reset" value="Annuler" />
+			</div>
+
+		</fieldset>
+	</form>
+</main>
+
+
+<?php
+include("footer.html");

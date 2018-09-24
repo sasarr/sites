@@ -1,0 +1,43 @@
+*{box-sizing: border-box;}
+
+div{
+	text-align: center;
+}
+
+div img{
+		
+		transition: width, 0.3s ease 0;	
+}
+
+div img:hover{
+	transform: rotate(90deg), scale(1.5);
+	width: 100%
+}
+
+.ballon{
+	height:150px;
+	width: 150px;
+	background-color: orange;
+	border-radius:  100px;
+}
+
+@keyframes bounce{
+	0%{
+		background-color: orange;
+		transform: translateY(0px);
+	}
+	100%{
+		background-color: red;
+		transform: translateY(-100px);
+	}
+}
+
+.ballon:hover{
+	/*animation-name: bounce;
+	animation-duration: 0.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;*/
+
+	animation:bounce 0.5s ease 0s infinite alternate;
+}

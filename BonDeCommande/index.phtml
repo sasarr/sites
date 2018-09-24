@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bon de commande</title>
+</head>
+<body>
+	<h1>
+		PROJET BON DE COMMANDE
+	</h1>
+	
+	<table>
+		<caption> Listes des commandes </caption>
+		
+		<thead>
+			<th>numero de commande</th>
+			<th>date de commande</th>
+			<th>date de livraison</th>
+			<th>status</th>
+		</thead>
+
+		<tbody>
+			<!-- ici, ce sera dynamique -->
+			<?php foreach($allOrders as $singleOrder): ?>
+				<tr>
+					<td>
+						<a href="order.php?orderNumber=<?= $singleOrder['orderNumber'] ?>" > <?= $singleOrder['orderNumber'] ?> </a>
+					</td>
+					<td> <?= $singleOrder['orderDate'] ?> </td>
+					<td> <?= $singleOrder['shippedDate'] ?> </td>
+					<td> <?= $singleOrder['status'] ?> </td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+</body>
+</html>

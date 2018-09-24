@@ -1,0 +1,88 @@
+<h2><i class="fa fa-shopping-cart"></i> Passer une commande</h2>
+
+<form data-order-step="run" id="order-form" class="generic-form hidden">
+
+    <!-- Champ caché stockant le prix de vente du produit alimentaire sélectionné -->
+    <input type="hidden" name="salePrice">
+
+    <aside class="error-message hidden">
+        <h3><i class="fa fa-warning"></i> Il y a <em class="total-error-count">1</em> erreur(s) dans le formulaire !</h3>
+        <p></p>
+    </aside>
+
+    <fieldset>
+        <legend>Ajouter un article</legend>
+        <ul>
+            <li>
+                <label for="meal">Nom :</label>
+                <select id="meal" name="meal">
+                    <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: meals in /home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml on line <i>19</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>360336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml' bgcolor='#eeeeec'>.../OrderView.phtml<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-warning' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Warning: Invalid argument supplied for foreach() in /home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml on line <i>19</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>360336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml' bgcolor='#eeeeec'>.../OrderView.phtml<b>:</b>0</td></tr>
+</table></font>
+                </select>
+                <article id="meal-details" class="meal-details no-left-label">
+                    <img src="" alt="Photo du produit">
+                    <p></p>
+                    <span>Prix : <strong></strong></span>
+                </article>
+            </li>
+            <li>
+                <label for="quantity">Quantité :</label>
+                <input id="quantity" class="quantity" type="text" maxlength="2" name="quantity" data-name="Quantité" data-type="positive-integer" data-required>
+            </li>
+            <li>
+                <button class="button button-primary no-left-label" type="submit">Ajouter</button>
+            </li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Récapitulatif de la commande</legend>
+        <section id="order-summary"></section>
+    </fieldset>
+</form>
+
+<ul class="link-list">
+    <li>
+        <button id="validate-order" class="button button-primary" disabled>Valider la commande</button>
+        <a class="button button-cancel small" href="<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: requestUrl in /home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml on line <i>48</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>360336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml' bgcolor='#eeeeec'>.../OrderView.phtml<b>:</b>0</td></tr>
+</table></font>
+">Annuler</a>
+    </li>
+</ul>
+
+
+<!-- Classes de gestion du formulaire de commande -->
+<!-- Ce code JavaScript n'est chargé QUE depuis l'URL /order/payment/success -->
+<script src="<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: wwwUrl in /home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml on line <i>55</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>360336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml' bgcolor='#eeeeec'>.../OrderView.phtml<b>:</b>0</td></tr>
+</table></font>
+/js/classes/BasketSession.class.js"></script>
+<script src="<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined variable: wwwUrl in /home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml on line <i>56</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0005</td><td bgcolor='#eeeeec' align='right'>360336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='/home/wabap32/sites/Restaurant (corrigé)/application/www/order/OrderView.phtml' bgcolor='#eeeeec'>.../OrderView.phtml<b>:</b>0</td></tr>
+</table></font>
+/js/classes/OrderForm.class.js"></script>

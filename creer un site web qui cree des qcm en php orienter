@@ -1,0 +1,6 @@
+creer un site web qui cree des qcm en php orienter 
+page de connexion et inscription liés
+ensuite une page qui nous permet de creer une question a choix multiple ou non
+passer des qcm qui ont deja ete mis dans la base de donne a partire diu moment ou ils sont punlics
+enregistrer les résultas des qcm dans la base de donne.
+un utilisateur doit pouvoir aller voir sur son profil la liste qcm passés 

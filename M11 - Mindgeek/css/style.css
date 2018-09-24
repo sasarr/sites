@@ -1,0 +1,471 @@
+*{box-sizing: border-box;}
+
+html{
+	font-size: 62.5%;
+}
+/*************************HOME*****************************/
+/**********************************************************/
+/**********************************************************/
+
+
+/*********************VERSION_MOBILE***************************/
+
+
+/******************HEADER_MOBILE*******/
+
+body {
+	font-family: 'Candal';
+	padding-top: 80px;
+	}
+
+/*.container{
+	width: 80%;
+	margin: auto;
+}*/
+
+ 
+
+header img{
+	margin-bottom: 60px;
+}
+
+header nav{
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+}
+header a{
+	text-decoration: none;
+	font-size: 2rem;
+	color:#193e47;
+	margin: 20px 0;
+}
+
+header a:hover{
+	color: #fb8a9b;
+}
+
+nav i.fas{
+	color:#fb8a9b; 
+	font-size: 3rem;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+nav a:hover i{
+	color:#193e47;
+}
+/**********MAIN_MOBILE*******/
+
+#home main section:first-child{
+	background-image: url(../img/background.jpg);
+	padding: 6rem 4.4rem;
+
+}
+
+#home h1{
+	color: white;
+	font-size: 3rem; 
+	text-align: center;
+	line-height: 7rem;
+}
+
+#home main section:first-child p{
+	color: white;
+	font-size: 1.8rem;
+	text-align: center;
+	line-height: 4rem;
+}
+
+input{
+	display: inline-block;
+	width: 100%;
+	border: none;
+	background-color: #fb8a9b;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
+	font-family: 'open sans';
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+	padding-left: 7rem;
+}
+
+.titreblue{
+	color: #193e47;
+	font-size: 2.5rem;
+	border: 1px dashed #193e47  ;
+	border-bottom: none;
+	padding: 4rem 0rem;
+	text-align: center;
+	margin-top: 7rem;
+}
+
+#home section:nth-child(3) article,#home section:nth-child(4) article  {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	margin-bottom: 8rem;
+	padding-left: 20px;
+	padding-right: 20px;
+
+}
+
+#home section:nth-child(3) h3,#home section:nth-child(3) i,#home section:nth-child(4) h3,#home section:nth-child(4) i{
+	color: #fb8a9b;
+}
+#home section:nth-child(3) div{
+	margin-top: 6rem;
+}
+#home section:nth-child(3) i,#home section:nth-child(4) i{
+	font-size: 4rem;
+	margin-bottom: 2.8rem;
+}
+
+#home section:nth-child(3) h3,#home section:nth-child(4) h3{
+	font-size: 1.8rem;
+}
+
+#home section:nth-child(3) p,#home section:nth-child(4) p{
+	color: #68626c;
+	font-family:"open sans";
+	font-size:1.7rem;
+	line-height: 3rem;
+}
+
+#home .prix{
+	font-size: 2rem;
+	font-family: "open sans";
+	color: #fb8a9b;
+}
+
+/********FOOTER_MOBILE*************/
+footer{
+	padding-top: 60px;
+	text-align: center;
+	background-color:#213e4e;
+	padding-bottom: 8rem;
+
+
+}
+footer nav{
+	display: flex;
+	flex-direction: column;
+	align-items:center;
+}
+
+footer nav a{
+	margin: 2rem 0;
+	font-size: 1.7rem;
+	text-decoration: none;
+	color: white;
+}
+
+footer nav a:hover{
+	color: #fb8b9b;
+}
+
+footer img{
+	width: 5rem;
+	margin-top: 3rem;
+}
+
+footer p a{
+	text-decoration: none;
+	
+	font-family: "arial";
+	line-height: 2rem;
+	color: #f4faff;
+}
+footer p{
+	font-family: "arial";
+	color: #a0b6c3;
+	font-size: 1.3rem;
+}
+@media screen and (min-width: 530px){
+	.titreblue{
+	padding: 4rem 10rem;
+}
+}
+
+/*******************VERSION_TABLETTE***********************/
+
+@media screen and (min-width: 768px){
+
+
+#home h1{
+	font-size: 4rem; 
+}
+
+#home main section:first-child p{
+	font-size: 2rem;
+}
+
+input{
+	font-size: 2rem;
+}
+}
+
+
+/****************************VERSION_PC******************/
+@media screen and (min-width: 1024px){
+
+header{
+	padding-bottom: 8rem;
+}
+
+
+header img{
+	margin-bottom: 0px;
+}
+
+header nav{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 6rem;
+}
+
+
+/**********MAIN_PC*******/
+ input{
+	
+	font-size: 2.5rem;
+	padding-left: 16rem;
+}
+
+#home h2{
+	margin-bottom: 7rem;
+}
+
+#home main section:first-child{
+	padding: 21rem 8.4rem;
+}
+
+#home section:nth-child(3) div ,#home section:nth-child(4) div  {
+	flex-direction: row;
+	display: flex;
+	justify-content: space-around;
+}
+
+#home section:nth-child(3) p ,#home section:nth-child(4) p {
+	text-align: justify;
+}
+
+
+/*************FOOTER_PC*********/
+
+footer nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+ footer{
+	padding-top: 50px;
+}
+}
+
+/*****************************MUTUALISE****************************/
+/******************************************************************/
+/******************************************************************/
+
+/*********************VERSION_MOBILE***************************/
+
+/**************MAIN_MOBILE*******************/
+
+#mutualise h2{
+	background-color: #213e4e;
+	color: white;
+	padding: 3.8rem 0;
+	font-size: 2rem;
+}
+
+#mutualise section:nth-child(3){
+	text-align: center;
+} 
+#mutualise section:nth-child(3) ul{
+	text-align: left;
+}
+#mutualise article>p, #mutualise section:nth-child(2)>p{
+	color: #68626c;
+	font-family:"open sans";
+	font-size:1.7rem;
+	line-height: 3rem;
+}
+
+#mutualise section:nth-child(2)>p{
+	margin: 60px 0;
+}
+
+#mutualise p.euro{
+	font-size: 2rem;
+	color: #676769;
+	font-family: 'candal'
+}
+
+#mutualise article ul {
+	color: #68626c;
+	line-height: 35px;
+	font-size: 1.5rem;
+	font-family: 'open sans';
+	list-style-type:circle;
+
+}
+
+#mutualise article a{
+	background-color: #fb8b9b;
+	color: white;
+	text-decoration: none;
+	padding: 20px 40px;
+	font-size: 1.5rem;
+	display: inline-block;
+	width: 100%;
+}
+
+#mutualise article a:hover{
+	background-color: #ccc;
+	color:#213e4e;
+}
+
+#mutualise article{
+	border: 1px dashed #213e4e;
+	padding: 15px;
+	margin-bottom: 50px; 
+}
+#mutualise section:nth-child(2)>p, #mutualise section:nth-child(3){
+	padding: 0 20px;
+}
+
+/****************************VERSION_PC******************/
+@media screen and (min-width: 1024px){
+	
+#mutualise section:nth-child(3) div{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+}
+
+#mutualise section:nth-child(3) div article{
+	flex-basis: 31%;
+}
+
+#mutualise section:nth-child(3) div:hover article{
+	opacity: 0.5;
+}
+
+#mutualise section:nth-child(3) div article:hover{
+	opacity: 1;
+}
+}
+
+/*****************************DEDIE****************************/
+/******************************************************************/
+/******************************************************************/
+
+/*********************VERSION_MOBILE***************************/
+
+#dedie h2{
+	background-color: #213e4e;
+	color: white;
+	padding: 3.8rem 0;
+	font-size: 2rem;
+}
+
+#dedie section:nth-child(3){
+	text-align: center;
+} 
+#dedie section:nth-child(3) ul{
+	text-align: left;
+	padding-left: 90px;
+}
+
+#dedie article p{
+	font-size: 2rem;
+	color: #676769;
+	font-family: 'candal';
+	margin-bottom:40px;
+}
+
+#dedie section:nth-child(2) p{
+	color: #68626c;
+	font-family:"open sans";
+	font-size:1.7rem;
+	line-height: 3rem;
+}
+
+#dedie section:nth-child(2)>p{
+	margin: 60px 0;
+}
+
+#dedie div article ul {
+	color: #68626c;
+	line-height: 35px;
+	font-size: 1.5rem;
+	font-family: 'open sans';
+	list-style-type:circle;
+}
+
+#dedie article a{
+	background-color: #fb8b9b;
+	color: white;
+	text-decoration: none;
+	padding: 20px 40px;
+	font-size: 1.5rem;
+	display: inline-block;
+	width: 100%;
+}
+
+#dedie article a:hover{
+	background-color: #ccc;
+	color:#213e4e;
+}
+
+#dedie article{
+	border: 1px dashed #213e4e;
+	padding: 15px;
+	margin-bottom: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; 
+}
+
+#dedie section:nth-child(2)>p, #dedie section:nth-child(3){
+	padding: 0px 20px;
+}
+
+/****************************VERSION_PC******************/
+@media screen and (min-width: 1024px){
+	
+#dedie section:nth-child(3) div{
+	flex-direction: row;
+	display: flex;
+	justify-content: space-between;
+}
+
+#dedie section:nth-child(3) div article{
+	flex-basis: 31%;
+}
+
+#dedie section:nth-child(3) div:hover article{
+	opacity: 0.5;
+}
+
+#dedie section:nth-child(3) div article:hover{
+	opacity: 1;
+}
+}
+
+/*****************************CONTACT********************************/
+/******************************************************************/
+/******************************************************************/
+
+/*********************VERSION_MOBILE***************************/
+
+
+#contact article i{
+	color: #fb8b9b,
+	font-size:2rem;
+}

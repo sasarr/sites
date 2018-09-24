@@ -1,0 +1,18 @@
+ div {
+ 	background-color: royalblue;
+ 	width: 400px;
+ 	height: 300px;
+ 	border-radius: 10px;
+ }
+
+ .none{
+ 	display: none;
+ }
+
+ .rouge{
+ 	background-color: red;
+ }
+
+ .vert{
+ 	background-color: green;
+ }

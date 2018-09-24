@@ -1,0 +1,60 @@
+Niveau 1:
+
+Creer un constructeur d'articles, ces articles vont pouvoir etre cree a partir de 
+random, ils devront avoir une quantite un nom, la possibilite etre achete seulement si il reste des quantite superieur a zero, ils auront un prix
+
+Niveau 2:
+
+Vous allez creer un panier, ce panier sera composee'article ( regardez le niveau 1 )
+Vous pouvez demander au panier de vous donner la quantiteeotale d'articles 
+
+Vous pouvez demander au panier combien tout ca va couter 
+Vous pouvez annuler un produit de votre panier 
+
+
+Niveau 3:
+
+Vous pourrez stocker un panier dans un compte utilisateur ( un objet egaleement )
+Si l'utilisateur ne veux pas payer son panier tout de suite, il peux l'enregistrer 
+dans une liste d'envie de son compte utilisateur et commencer un nouveau panier 
+
+il pourra par contre recuperer sa liste d'envie en tant que panier principale de son compte
+
+
+
+
+var toto = "14";
+
+if( toto == 14 )
+{
+    let toto = 15;
+    console.log(toto);  // 15
+}
+console.log(toto); // 14
+console.log("-----------------------------------------");
+//-----------------------------------------------------
+
+let toto = "14";
+
+if( toto == "14" )
+{
+    let toto = "fiesta";
+    console.log(toto); // fiesta
+}
+
+console.log(toto); // 14
+console.log("-----------------------------------------");
+//---------------------------------------------------------
+
+for(let i = 0; i < 2; i++)
+{
+    for(let j = 0; j < 2; j++ )
+    {
+        //console.log(i);
+        let i = "iphone";
+        console.log( " deuxieme boucle : " + i);
+    }
+
+    console.log("premiere boucle: " + i);
+
+context.fillRect(460,0,40,500);

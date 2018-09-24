@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BON DE COMMANDE - DETAIL</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1> BONS DE COMMANDE </h1>
+	<a href="index.php"> Retourner a la page precedente </a>
+
+	<article>
+		<h2> <?= $customerContact['customerName'] ?> </h2>
+		<h3> <?= $customerContact['contactFirstName'] . ' ' . $customerContact['contactLastName'] ?> </h3>
+		<p> <?= $customerContact['addressLine1'] ?> </p>
+		<p> <?= $customerContact['addressLine2'] ?> </p>
+		<p> <?= $customerContact['city'] ?> </p>
+	</article>
+
+
+	<table>
+		<caption> Bon de commande: <?= $_GET['orderNumber'] ?> </caption>
+		<thead>
+			<th> Produit </th>
+			<th> Prix Unitaire </th>
+			<th> Quantité </th>
+			<th> Prix Total </th>
+		</thead>
+
+		<tfoot>
+			<tr>
+				<th> Montant Total HT </th>
+				<th> <?= $totalHT ?> € </th>
+			</tr>
+			<tr>
+				<th> TVA </th>
+				<th> <?=  $totalHT * 0.2 ?> € </th>	
+			</tr>
+			<tr>
+				<th> Montant Total </th>
+				<th> <?= $totalHT + ( $totalHT * 0.2 ) ?> € </th>	
+			</tr>
+		</tfoot>
+		<tbody> 
+		<?php foreach($orderInfos as $orderInfo): ?>
+			<tr>
+				<td> <?= $orderInfo['productName'] ?> </td>
+				<td> <?= $orderInfo['priceEach'] ?> </td>
+				<td> <?= $orderInfo['quantityOrdered'] ?> </td>
+				<td> <?= $orderInfo['totalPrice'] ?> </td>
+			</tr>
+		<?php endforeach; ?>
+		</tbody>
+	</table>
+</body>
+</html>

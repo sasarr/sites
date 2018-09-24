@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Carnet d'adresses</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<h1><i class="fas fa-book"></i> Carnet d'Adresse</h1>
+
+
+<ul class="hide" >
+<li id="liste"></li>
+</ul>
+<input type="button" name="cacher" value="+" id="cacher">
+<input type="button" name="supp" value="supp" id="supp" >
+<hr>
+
+
+<form method="post" action="">
+
+	<p>
+	<label for="Civilité ">Civilité :</label>
+	<select name="civilite" id="civilite">
+	<option value="Madame" id= "Madame">Madame</option>
+	<option value="Monsieur" id="Monsieur">Monsieur</option>
+	</select>
+	</p>
+
+
+	<p><label for="Nom">Nom :</label><input type="text" name="nom" id="nom"></p>
+	<p><label for="Prénom">Prénom :</label><input type="text" name="prenom" id="prenom"></p>
+	<p><label for="Téléphone">Téléphone :</label><input type="tel" name="telephone" id="telephone"></p>
+
+	<button id = "save" class="load">Enregistrer</button>
+</form>
+
+
+<script src="main.js" ></script>
+</body>
+</html>

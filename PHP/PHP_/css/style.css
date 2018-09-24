@@ -1,0 +1,54 @@
+body{
+	background-color: #5F9EA0;
+	margin:0;
+}
+
+div{
+	background-color: #B0E0E6;
+	margin: 0px 200px 100px 200px;
+
+}
+h1{
+	color: #DC143C;
+	margin: 0;
+	text-align: center;
+	padding-top: 90px;
+}
+
+p.cacher{
+	display: none;
+}
+
+label#choix:hover p.cacher{
+	display: block;
+}
+
+form>section>section{
+	margin-bottom: 50px;
+	padding-left: 50px;
+}
+fieldset {
+	padding: 20px 50px;
+	margin-top: 50px;
+}
+fieldset section{
+	display: block;
+	margin-bottom: 25px;
+}
+
+main>section{
+padding: 50px  250px;
+}
+
+.bouton{
+	background-color: #5F9EA0;
+	padding: 10px 10px;
+	color: white;
+	font-size:15px;
+	font-weight: bold;
+}
+
+fieldset label{
+	padding-right: 100px;
+
+}

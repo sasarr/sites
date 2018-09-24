@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> INDEX</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+		<h1>Bon de commande</h1>
+
+		<a href="indexphp.php">Retourner à l'acceuil</a>
+
+		<?php foreach($orders2 as $ligne): ?>
+			<tr>
+				<td><?= $ligne['customerName'] ?> </td>
+				<td><?= $ligne['contactFirstName'] ?> </td>
+				<td><?= $ligne['contactLastName'] ?> </td>
+				<td><?= $ligne['addressLine1'] ?> </td>
+				<td><?= $ligne['city'] ?> </td><br/>
+			</tr>
+		<?php endforeach; ?>	
+
+
+		

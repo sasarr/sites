@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>formulaire</title>
+</head>
+<body>
+
+<form action="index.php" method="POST" >
+	<input type="text" id="word" name="word">
+	<input type="submit" value="Envoyer">
+</form>
+
+</body>
+</html>
+
+
+<!--correction de prof*************************************************************
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> traducteur de mots! </title>
+</head>
+<body>
+	<header>
+		<h1> Mon super traducteur de mots ! </h1>
+	</header>
+
+	<main>
+		<form action="traductor.php" method="POST">
+			<input type="text" id="word" name="word">
+			<input type="submit">
+		</form>
+
+		<?php if($traduction != null): ?>
+			<p> Votre traduction est :  <?= $traduction ?>  a partir de la langue: <?php echo($language) ?> </p>
+		<?php endif; ?>
+	</main>
+</body>
+</html>
+
+-->
